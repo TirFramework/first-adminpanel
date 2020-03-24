@@ -26,5 +26,10 @@ class FirstPanelServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadViewsFrom(__DIR__.'/Resources/Views', 'first-panel');
+
+        $this->publishes([
+            __DIR__ . '/public/adminpanel' => public_path('adminpanel'),
+        ], 'first-panel');
+
     }
 }
