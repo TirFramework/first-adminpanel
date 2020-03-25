@@ -2,9 +2,9 @@ $('#calendar').datepicker({
 		});
 
 !function ($) {
-    $(document).on("click","ul.nav li.parent > a ", function(){          
-        $(this).find('em').toggleClass("fa-minus");      
-    }); 
+    $(document).on("click","ul.nav li.parent > a ", function(){
+        $(this).find('em').toggleClass("fa-minus");
+    });
     $(".sidebar span.icon").find('em:first').addClass("fa-plus");
 }
 
@@ -30,3 +30,28 @@ $(document).on('click', '.panel-heading span.clickable', function(e){
 		$this.find('em').removeClass('fa-toggle-down').addClass('fa-toggle-up');
 	}
 })
+
+
+$('.dropdown-toggle').click(function () {
+    $(this).siblings('ul').slideToggle()
+    $(this).parents('.dropdown').toggleClass('open')
+})
+
+$('.main-nav-toggle').click(function () {
+    // $('body').toggleClass('close-menu');
+    if ($('body').hasClass('close-menu')) {
+        $('body').removeClass('close-menu');
+        localStorage.setItem('alerted', 'no');
+    } else {
+        $('body').addClass('close-menu');
+        localStorage.setItem('alerted', 'yes');
+    }
+})
+
+
+
+if (localStorage.getItem('alerted') == 'yes') {
+    $('body').addClass('close-menu');
+}
+
+

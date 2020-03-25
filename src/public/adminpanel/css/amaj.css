@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap");
 html {
   height: 100%;
 }
@@ -5,6 +6,7 @@ html {
 body {
   height: 100%;
   background: #f9f9f9;
+  font-family: 'Open Sans', sans-serif;
 }
 
 @-webkit-keyframes AnimationName {
@@ -36,6 +38,12 @@ body {
   padding-right: 30px;
   padding-top: 75px;
   height: 100%;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.close-menu .layout {
+  padding-left: 70px;
 }
 
 .layout::before {
@@ -80,6 +88,12 @@ body {
   display: -ms-flexbox;
   display: flex;
   z-index: 1;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.close-menu .header {
+  padding-left: 70px;
 }
 
 .header .navbar-header {
@@ -142,19 +156,68 @@ body {
   display: block;
 }
 
+.main-nav li.open {
+  background: rgba(0, 0, 0, 0.05);
+}
+
 .main-nav li a {
-  padding: 5px 10px;
+  padding: 5px 15px;
   display: block;
   color: #6b6f82;
   text-decoration: none;
+}
+
+.main-nav li a .text {
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.close-menu .main-nav li a .text {
+  display: none;
 }
 
 .main-nav li a .icon {
   color: #6b6f82;
 }
 
-.main-nav li a:hover {
+.main-nav li:hover > a {
   background: rgba(0, 0, 0, 0.035) !important;
+}
+
+.main-nav li ul {
+  display: none;
+}
+
+.main-nav li ul a {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.close-menu .main-nav .dropdown-toggle::after {
+  display: none;
+}
+
+.close-menu .main-nav .dropdown:hover ul {
+  opacity: 1;
+  visibility: visible;
+}
+
+.close-menu .main-nav .dropdown > ul {
+  -webkit-box-shadow: 2px 4px 7px 0 rgba(0, 0, 0, 0.07);
+          box-shadow: 2px 4px 7px 0 rgba(0, 0, 0, 0.07);
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+  display: block !important;
+  position: absolute;
+  left: 50px;
+  width: 300px;
+  background: #fff;
+  top: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.close-menu .main-nav .dropdown > ul a .text {
+  display: inline-block;
 }
 
 .sidebar {
@@ -167,6 +230,12 @@ body {
   -webkit-box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.2);
   z-index: 2;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.close-menu .sidebar {
+  width: 50px;
 }
 
 .sidebar .header-sidebar {
@@ -180,19 +249,30 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 0 15px;
 }
 
 .sidebar .header-sidebar .navbar-brand {
-  padding: 0 15px;
   display: block;
+  overflow: hidden;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.close-menu .sidebar .header-sidebar .navbar-brand {
+  width: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .sidebar .header-sidebar .main-nav-toggle {
+  margin-right: -15px;
+  margin-left: -15px;
   height: 100%;
   width: 65px;
   border: 0;
-  -webkit-transition: .1s;
-  transition: .1s;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
   cursor: pointer;
   background: #fff;
 }
@@ -218,7 +298,8 @@ body {
           align-items: center;
 }
 
-.btn i, .btn svg {
+.btn i,
+.btn svg {
   margin: 0 5px 0 0;
 }
 
@@ -242,8 +323,6 @@ body {
   color: rgba(255, 255, 255, 0.05);
   /* color: transparent; */
   z-index: -1;
-  -webkit-text-stroke: 1px;
-  -webkit-text-stroke-color: rgba(255, 255, 255, 0.3);
 }
 
 .rtl .page-header:before {
@@ -288,13 +367,41 @@ body {
 
 .dt-bootstrap4 .table th {
   padding: 0.75rem;
+  font-weight: 400;
 }
 
-.dt-bootstrap4 .table td {
+.dt-bootstrap4 .table tbody tr td {
+  font-weight: 300;
   padding: 0.5rem;
 }
 
-.dt-bootstrap4 .btn svg {
-  margin-right: 0;
+.dt-bootstrap4 .table tbody tr td:last-child {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  -webkit-transform: translate(50px);
+          transform: translate(50px);
+  opacity: 0;
+  -webkit-transition-delay: .2s;
+          transition-delay: .2s;
+}
+
+.dt-bootstrap4 .table tbody tr:hover td:last-child {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translate(0);
+          transform: translate(0);
+}
+
+.dt-bootstrap4 button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+button {
+  outline: 0 !important;
 }
 /*# sourceMappingURL=amaj.css.map */

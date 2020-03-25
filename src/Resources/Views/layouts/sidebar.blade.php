@@ -23,8 +23,8 @@
     <li> <a href="#"> <span class="icon"> <i class="far fa-star"></i> </span> <span class="text">test</span> </a> </li>
     <li> <a href="#"> <span class="icon"> <i class="far fa-star"></i> </span> <span class="text">test</span> </a> </li>
     <li> <a href="#"> <span class="icon"> <i class="far fa-star"></i> </span> <span class="text">test</span> </a> </li>
-    <li>
-        <a href="#"> <span class="icon"> <i class="far fa-star"></i> </span> <span class="text">test</span> </a>
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle"> <span class="icon"> <i class="far fa-star"></i> </span> <span class="text">test</span> </a>
         <ul>
             <li> <a href="#"> <span class="icon"> <i class="far fa-star"></i> </span> <span class="text">test</span> </a> </li>
             <li> <a href="#"> <span class="icon"> <i class="far fa-star"></i> </span> <span class="text">test</span> </a> </li>
