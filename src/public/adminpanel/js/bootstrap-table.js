@@ -510,14 +510,14 @@
         if (this.options.showRefresh) {
             html.push(sprintf('<button class="btn btn-default" type="button" name="refresh" title="%s">',
                 this.options.formatRefresh()),
-                '<i class="glyphicon glyphicon-refresh icon-refresh"></i>',
+                '<i class="fas fa-refresh icon-refresh"></i>',
                 '</button>');
         }
 
         if (this.options.showToggle) {
             html.push(sprintf('<button class="btn btn-default" type="button" name="toggle" title="%s">',
                 this.options.formatToggle()),
-                '<i class="glyphicon glyphicon glyphicon-list-alt icon-list-alt"></i>',
+                '<i class="fas fa glyphicon-list-alt icon-list-alt"></i>',
                 '</button>');
         }
 
@@ -526,7 +526,7 @@
                 this.options.showRefresh || this.options.showToggle ? 'btn-group' : '',
                 this.options.formatColumns()),
                 '<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">',
-                '<i class="glyphicon glyphicon-th icon-th"></i>',
+                '<i class="fas fa-th icon-th"></i>',
                 ' <span class="caret"></span>',
                 '</button>',
                 '<ul class="dropdown-menu" role="menu">');

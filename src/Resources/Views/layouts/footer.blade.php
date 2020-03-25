@@ -1,12 +1,11 @@
 
-<script src="/adminpanel/js/jquery-1.11.1.min.js"></script>
+<script src="/adminpanel/js/jquery-3.3.1.js"></script>
 <script src="/adminpanel/js/flatpickr.min.js"></script>
 <script src="/adminpanel/js/jdate.min.js"></script>
 
 <script>
     window._Date = window.Date ;
     // console.log(window.Date);
-
 </script>
 <script src="/adminpanel/js/l10n/fa.js"></script>
 
@@ -67,10 +66,13 @@
 
 
 </script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="/adminpanel/js/bootstrap.min.js"></script>
+
 
 <!-- DataTables -->
 <script type="text/javascript" src="/adminpanel/libs/DataTables/datatables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
 <script type="text/javascript" src="/adminpanel/libs/DataTables/Select-1.2.5/js/dataTables.select.min.js"></script>
 <script type="text/javascript" src="/adminpanel/libs/DataTables/Buttons-1.5.1/js/dataTables.buttons.min.js"></script>
 <script type="text/javascript" src="/adminpanel/libs/DataTables/Editor-1.7.3/js/dataTables.editor.min.js"></script>
@@ -359,6 +361,7 @@
     //delete row
     function deleteRow(route) {
         <?php $token=Session::token(); ?>
+
         if (!confirm("{{trans('message.delete_confirm')}}"))
             return false;
         var form = document.createElement("form");
@@ -424,7 +427,10 @@ for (var i = 0, len = links.length; i < len; i++) {
 
 </script>
 
-<script defer src="/adminpanel/libs/fontawesome-free/js/all.min.js"></script>// <!--load all styles -->
+<script defer src="/adminpanel/libs/fontawesome-free/js/all.min.js"></script>
+
+
+<!--load all styles -->
 
 
 @stack('scripts')

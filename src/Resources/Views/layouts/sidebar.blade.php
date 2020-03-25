@@ -1,24 +1,15 @@
 @php
 //use App\Modules\Authorization\Acl;
 @endphp
-<div id="sidebar-collapse" class="col-sm-3 col-lg-1 sidebar">
-    <div class="profile-sidebar">
-        <div class="profile-userpic">
-            {{-- <img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt=""> --}}
-        </div>
-        <div class="profile-usertitle">
-            <div class="profile-usertitle-name">
-                @auth
-                    {{ Auth::user()->name }}
-                @endauth
-            </div>
-            <div class="profile-usertitle-status"><span class="indicator label-success"></span>@lang('panel.online')
-            </div>
-        </div>
-        <div class="clear"></div>
-    </div>
-    <div class="divider"></div>
+<div id="sidebar-collapse" class="sidebar">
 
+    <div class="header-sidebar">
+        <a class="navbar-brand" target="_blank"><span>{{config('app.name')}}</span> Admin</a>
+
+        <button class="main-nav-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
 
 
     {{--    <form role="search">--}}
@@ -26,9 +17,19 @@
     {{--            <input type="text" class="form-control" placeholder="Search">--}}
     {{--        </div>--}}
     {{--    </form>--}}
-<ul class="nav menu">
+    <nav class="main-nav">
 
-
+<ul class="">
+    <li> <a href="#"> <span class="icon"> <i class="far fa-star"></i> </span> <span class="text">test</span> </a> </li>
+    <li> <a href="#"> <span class="icon"> <i class="far fa-star"></i> </span> <span class="text">test</span> </a> </li>
+    <li> <a href="#"> <span class="icon"> <i class="far fa-star"></i> </span> <span class="text">test</span> </a> </li>
+    <li>
+        <a href="#"> <span class="icon"> <i class="far fa-star"></i> </span> <span class="text">test</span> </a>
+        <ul>
+            <li> <a href="#"> <span class="icon"> <i class="far fa-star"></i> </span> <span class="text">test</span> </a> </li>
+            <li> <a href="#"> <span class="icon"> <i class="far fa-star"></i> </span> <span class="text">test</span> </a> </li>
+        </ul>
+    </li>
     @php
         //$modules = Module::all();
     @endphp
@@ -43,6 +44,7 @@
     @endforeach --}}
 
 </ul>
+</nav>
     {{-- <ul class="nav menu">
         @if(Acl::checkAccess('menu', 'index')!=false || Acl::checkAccess('menuitem', 'index') != false)
 
