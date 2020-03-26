@@ -245,22 +245,15 @@
                             }
                             $('.select2').select2();
 
-                                // if select all reload datatabel
-                            //   $('.filter').change(function(){
-                            //     if($(this).val() == '...'){
-                            //         this.table.clear().draw();
-                            //     }
-                            // });
-
                         }
                     });
                 },
 
-                // rowReorder: {
-                //     dataSrc: 'ordered',
-                //     update: false, // this is key to prevent DT auto update
-                //     select: 'reorder'
-                // }
+                rowReorder: {
+                    dataSrc: 'sort_order',
+                    update: false, // this is key to prevent DT auto update
+                    select: 'reorder'
+                }
 
             });
 
@@ -337,12 +330,12 @@
                 idSrc: 'id',
                 fields: [{
                     label: "Order:",
-                    name: "ordered"
+                    name: "sort_order"
                 }]
             });
 
             // Activate an inline edit on click of a table cell
-            $(this.table).on('click', 'tbody .ordered', function (e) {
+            $(this.table).on('click', 'tbody .sort_order', function (e) {
                 editor.inline(this);
             });
             //for inline edit order Update
