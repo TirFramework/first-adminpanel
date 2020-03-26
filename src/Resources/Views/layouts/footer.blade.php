@@ -224,6 +224,7 @@
                         if (filterCols.includes(i)) //check in array for which column select for enable filter
                         {
                             //var select = $('<select class="select2" data-live-search="true"><option value="...">{{trans('panel.all')}}</option></select>')
+                            //TODO:refactor paginate selet2
                             var select = $('<select class="select2 filter" data-live-search="true"><option value="...">{{trans('crud::panel.all')}}</option></select>')
                                 .appendTo($(column.footer()).empty())
                                 .on('change', function () {
