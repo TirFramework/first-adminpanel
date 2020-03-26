@@ -225,10 +225,13 @@
                         {
                             //var select = $('<select class="select2" data-live-search="true"><option value="...">{{trans('panel.all')}}</option></select>')
                             //TODO:refactor paginate selet2
-                            var select = $('<select class="select2 filter" data-live-search="true"><option value="...">{{trans('crud::panel.all')}}</option></select>')
+                            var select = $('<select class="select2 filter" data-live-search="true"><option value="">{{trans('crud::panel.all')}}</option></select>')
                                 .appendTo($(column.footer()).empty())
                                 .on('change', function () {
-                                    var val = '^'+$(this).val()+'$';
+                                    var val = $(this).val();
+                                    if(val != ""){
+                                        val = '^'+ val +'$';
+                                    }
                                     column.search(val, true, false)
                                         .draw(true);
                                 });
@@ -242,12 +245,12 @@
                             }
                             $('.select2').select2();
 
-                                //if select all reload datatabel
-                              $('.filter').change(function(){
-                                if($(this).val() == '...'){
-                                    location.reload();
-                                }
-                            });
+                                // if select all reload datatabel
+                            //   $('.filter').change(function(){
+                            //     if($(this).val() == '...'){
+                            //         this.table.clear().draw();
+                            //     }
+                            // });
 
                         }
                     });
