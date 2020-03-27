@@ -12,8 +12,8 @@
         <div class="main">
             {{--Custom System message--}}
             @if ($errors->any())
-                <div class="alert bg-danger alert-dismissable fade in" role="alert">
-                    <a href="#" class="pull-right"><em class="fas fa-lg fa-close" data-dismiss="alert" aria-label="close"></em></a>
+                <div class="alert bg-danger alert-dismissable fade show" role="alert">
+                    <a href="#" class="pull-right"><em class="fas fa-lg fa-times" data-dismiss="alert" aria-label="close"></em></a>
                     <ul>
                         @foreach ($errors->all() as $error)
                             <li> {{ $error }}</li>
@@ -33,7 +33,7 @@
 
             {{--Custom Error message--}}
             @if (Session::has('error'))
-                <div class="alert bg-danger alert-dismissable fade in" role="alert">
+                <div class="alert bg-danger alert-dismissable fade show" role="alert">
                     <a href="#" class="pull-right"><em class="fas fa-lg fa-times" data-dismiss="alert" aria-label="close"></em></a>
                     <em class="fas fa-lg fa-exclamation-circle">&nbsp;</em>
                     {{ Session::get('error') }}

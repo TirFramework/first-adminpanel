@@ -55,3 +55,21 @@ if (localStorage.getItem('alerted') == 'yes') {
 }
 
 
+
+$('.form-group').on('change keyup focus blur mousedown', '.form-control', function(){
+    checker(this);
+});
+
+$('.form-control').each(function(){
+    checker(this);
+})
+
+function checker(elemnt){
+    if ($(elemnt).val())
+        $(elemnt).addClass("focus")
+    else
+        $(elemnt).removeClass('focus');
+
+}
+
+

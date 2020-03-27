@@ -61,10 +61,6 @@ body {
           animation: AnimationName 10s ease infinite;
 }
 
-.layout .main {
-  background: #fff;
-}
-
 .layout .page-header {
   color: #ffffffd9;
   font-size: 21px;
@@ -287,6 +283,7 @@ body {
   -webkit-box-shadow: 0px 5px 28px rgba(0, 0, 0, 0.05);
           box-shadow: 0px 5px 28px rgba(0, 0, 0, 0.05);
   background-color: #fff;
+  border-radius: 10px;
 }
 
 .btn {
@@ -385,6 +382,10 @@ body {
           transition-delay: .2s;
 }
 
+.dt-bootstrap4 .table tbody tr td:last-child a {
+  margin: 0 4px;
+}
+
 .dt-bootstrap4 .table tbody tr:hover td:last-child {
   -webkit-transition-delay: 0s;
           transition-delay: 0s;
@@ -394,6 +395,19 @@ body {
           transform: translate(0);
 }
 
+.dt-bootstrap4 .table tbody tr.selected td:last-child {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translate(0);
+          transform: translate(0);
+}
+
+.dt-bootstrap4 .table tbody tr.selected td:last-child * {
+  fill: #fff;
+}
+
 .dt-bootstrap4 button {
   padding: 0;
   border: 0;
@@ -401,7 +415,228 @@ body {
   cursor: pointer;
 }
 
+.dt-bootstrap4 .btn-group .btn {
+  margin: 0 10px;
+}
+
+.dt-bootstrap4 .btn-group .btn:last-child {
+  margin-right: 0;
+}
+
+.rtl .dt-bootstrap4 .btn-group .btn:last-child {
+  margin-right: 10px;
+  margin-left: 0;
+}
+
+.dt-bootstrap4 .btn-group .btn:first-child {
+  margin-left: 0;
+}
+
+.rtl .dt-bootstrap4 .btn-group .btn:first-child {
+  margin-right: 0;
+  margin-left: 10px;
+}
+
 button {
   outline: 0 !important;
+}
+
+.form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.form-group.text-right {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.form-group .control-label {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+.form-group .select2-container,
+.form-group .form-control {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+.form-group .error {
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+}
+
+.form-group .invalid-feedback {
+  -webkit-box-ordinal-group: 5;
+      -ms-flex-order: 4;
+          order: 4;
+}
+
+.form-group .input-date, .form-group .date {
+  background-color: #fff;
+}
+
+.form-group label.error {
+  font-size: 80%;
+  color: #dc3545;
+}
+
+.form-group .select2.select2-container {
+  width: 100% !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  line-height: 35px;
+  color: #555;
+}
+
+.select2-container .select2-selection--single,
+input.form-control {
+  border: 1px solid #ccc;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  height: 35px;
+  color: #555;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: 35px;
+}
+
+.form-control {
+  height: 35px;
+}
+
+.form-group {
+  margin-top: 20px;
+}
+
+.form-group .select2-container--default,
+.form-group .form-control {
+  border: 0 !important;
+  border-bottom: solid 1px #ccc !important;
+  border-radius: 0 !important;
+}
+
+.form-group .select2-container--default.focus ~ .control-label,
+.form-group .form-control.focus ~ .control-label {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  font-size: 80%;
+}
+
+.form-group .select2-container--default:focus,
+.form-group .form-control:focus {
+  outline: none  !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  border-bottom-color: #7222a1 !important;
+}
+
+.form-group .select2-container--default:focus ~ .control-label,
+.form-group .form-control:focus ~ .control-label {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  font-size: 80%;
+  color: #7222a1;
+}
+
+.form-group .select2-container--default.error,
+.form-group .form-control.error {
+  border-bottom-color: #dc3545 !important;
+  color: #dc3545;
+}
+
+.form-group .select2-container--default.error ~ .control-label,
+.form-group .form-control.error ~ .control-label {
+  color: #dc3545;
+}
+
+.form-group .control-label {
+  -webkit-transform: translateY(25px);
+          transform: translateY(25px);
+  -webkit-transition: .2s;
+  transition: .2s;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+}
+
+.form-group .control-label.open {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  font-size: 80%;
+}
+
+.select2-container .select2-selection--single {
+  border: 0 !important;
+  border-bottom: solid 1px #ccc !important;
+  border-radius: 0 !important;
+}
+
+.select2-container ~ .control-label {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  font-size: 80%;
+  color: #7222a1;
+}
+
+:focus {
+  outline: none !important;
+}
+
+/* ----------------------- btn effect */
+.btn span {
+  line-height: 1;
+}
+
+.btn {
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  z-index: 0;
+}
+
+.ink {
+  display: block;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 100%;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.animate {
+  -webkit-animation: ripple 0.65s linear;
+          animation: ripple 0.65s linear;
+}
+
+@-webkit-keyframes ripple {
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(2.5);
+            transform: scale(2.5);
+  }
+}
+
+@keyframes ripple {
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(2.5);
+            transform: scale(2.5);
+  }
 }
 /*# sourceMappingURL=amaj.css.map */

@@ -53,7 +53,7 @@ body {
         animation: AnimationName 10s ease infinite;
     }
     .main {
-        background: #fff;
+        // background: #fff;
     }
     .page-header {
         color: #ffffffd9;
@@ -239,6 +239,7 @@ body {
     border: 0;
     box-shadow: 0px 5px 28px rgba(0, 0, 0, 0.05);
     background-color: #fff;
+    border-radius: 10px;
     // padding: 25px;
     .card-header {
         // border-left: solid 4px $blue;
@@ -326,6 +327,9 @@ body {
                 opacity: 0;
                 // visibility: hidden;
                 transition-delay: .2s;
+                a{
+                    margin: 0 4px;
+                }
             }
         }
         &:hover {
@@ -338,6 +342,19 @@ body {
                 }
             }
         }
+        &.selected {
+            td {
+                &:last-child {
+                    transition-delay: 0s;
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translate(0);
+                    *{
+                        fill: #fff;
+                    }
+                }
+            }
+        }
     }
     button {
         padding: 0;
@@ -347,7 +364,120 @@ body {
         &.text-danger {
         }
     }
+    .btn-group{
+        .btn{
+            margin: 0 10px;
+            &:last-child{
+                margin-right: 0;
+                .rtl &{
+                    margin-right: 10px;
+                    margin-left: 0;
+                }
+            }
+            &:first-child{
+                margin-left: 0;
+                .rtl &{
+                    margin-right: 0;
+                    margin-left: 10px;
+                }
+
+            }
+        }
+    }
 }
 button{
     outline: 0 !important;
 }
+
+// ----------------------- input
+.form-group{
+    display: flex;
+    order: 2;
+    flex-wrap: wrap;
+    &.text-right{
+        justify-content: flex-end;
+    }
+    .control-label{
+        order: 1;
+    }
+    .select2-container,
+    .form-control{
+        order: 2;
+    }
+    .error{
+        order: 3;
+    }
+    .invalid-feedback{
+        order: 4;
+    }
+    .input-date, .date{
+        background-color: #fff;
+    }
+    //-------- VALIDATE
+    label.error{
+        font-size: 80%;
+        color: #dc3545;
+    }
+    //-------- .select2
+    .select2{
+        &.select2-container{
+            width: 100% !important;
+            // .select2-selection{
+            //     height: 38px;
+            //     .select2-selection__rendered{
+            //         line-height: 38px;
+            //     }
+            // }
+        }
+    }
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered{
+  line-height: 35px;
+  color: #555;
+}
+.select2-container .select2-selection--single,
+input.form-control {
+  border: 1px solid #ccc;
+  box-shadow: none;
+  height: 35px;
+  color: #555;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow{
+    height: 35px;
+}
+.form-control{
+    height: 35px;
+}
+
+
+
+@import 'sass/material_input';
+/* ----------------------- btn effect */
+.btn span{
+    line-height: 1;
+}
+.btn{
+  text-decoration:none;
+  position:relative;
+  overflow:hidden;
+  transition: all 0.2s ease;
+  z-index:0;
+}
+.ink {
+  display: block;
+  position: absolute;
+  background:rgba(255, 255, 255, 0.3);
+  border-radius: 100%;
+  transform:scale(0);
+}
+
+.animate {
+  animation:ripple 0.65s linear;
+}
+
+@keyframes ripple {
+    100% {opacity: 0; transform: scale(2.5);}
+}
+
+
+

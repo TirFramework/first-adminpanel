@@ -3,6 +3,9 @@
 <script src="/adminpanel/js/flatpickr.min.js"></script>
 <script src="/adminpanel/js/jdate.min.js"></script>
 
+<script src="/adminpanel/libs/jquery-validate/jquery.validate.min.js"></script>
+
+
 <script>
     window._Date = window.Date ;
     // console.log(window.Date);

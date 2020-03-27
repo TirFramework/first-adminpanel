@@ -49,7 +49,7 @@ use App\Modules\Authorization\acl;
 
         {{-- @if(Acl::checkAccess($name, 'delete')) --}}
         <a type="button" href="{{route($name.'.trash')}}" class="btn text-danger" title="{{trans('crud::panel.show-trash')}}">
-            <i class="fas fa-trash"></i>
+            <i class="fas fa-trash-restore h3"></i>
             {{-- <span class="hidden-xs">{{trans('crud::panel.show-trash')}}</span> --}}
         </a>
     </div>
