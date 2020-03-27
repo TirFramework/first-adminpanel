@@ -227,10 +227,14 @@
                         if (filterCols.includes(i)) //check in array for which column select for enable filter
                         {
                             //var select = $('<select class="select2" data-live-search="true"><option value="...">{{trans('panel.all')}}</option></select>')
-                            var select = $('<select class="select2 filter" data-live-search="true"><option value="...">{{trans('crud::panel.all')}}</option></select>')
+                            //TODO:refactor paginate selet2
+                            var select = $('<select class="select2 filter" data-live-search="true"><option value="">{{trans('crud::panel.all')}}</option></select>')
                                 .appendTo($(column.footer()).empty())
                                 .on('change', function () {
-                                    var val = '^'+$(this).val()+'$';
+                                    var val = $(this).val();
+                                    if(val != ""){
+                                        val = '^'+ val +'$';
+                                    }
                                     column.search(val, true, false)
                                         .draw(true);
                                 });
@@ -244,22 +248,15 @@
                             }
                             $('.select2').select2();
 
-                                //if select all reload datatabel
-                              $('.filter').change(function(){
-                                if($(this).val() == '...'){
-                                    location.reload();
-                                }
-                            });
-
                         }
                     });
                 },
 
-                // rowReorder: {
-                //     dataSrc: 'ordered',
-                //     update: false, // this is key to prevent DT auto update
-                //     select: 'reorder'
-                // }
+                rowReorder: {
+                    dataSrc: 'sort_order',
+                    update: false, // this is key to prevent DT auto update
+                    select: 'reorder'
+                }
 
             });
 
@@ -336,12 +333,12 @@
                 idSrc: 'id',
                 fields: [{
                     label: "Order:",
-                    name: "ordered"
+                    name: "sort_order"
                 }]
             });
 
             // Activate an inline edit on click of a table cell
-            $(this.table).on('click', 'tbody .ordered', function (e) {
+            $(this.table).on('click', 'tbody .sort_order', function (e) {
                 editor.inline(this);
             });
             //for inline edit order Update
