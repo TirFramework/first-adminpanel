@@ -5,6 +5,7 @@
         border: 0 !important;
         border-bottom: solid 1px #ccc !important;
         border-radius: 0 !important;
+        &:placeholder-shown,
         &.focus {
             ~ .control-label {
                 transform: translateY(0);
@@ -13,6 +14,7 @@
 
         }
         // &:valid ,
+
         &:focus {
             outline: none  !important;
             box-shadow: none !important;
@@ -43,15 +45,18 @@
             transform: translateY(0);
             font-size: 80%;
         }
+        &.uploder-label{
+            left: 130px;
+        }
     }
 }
 
 
 .select2-container{
 
-    .select2-selection--single{
+    .select2-selection{
         border: 0 !important;
-        border-bottom: solid 1px #ccc !important;
+        // border-bottom: solid 1px #ccc !important;
         border-radius: 0 !important;
     }
     ~ .control-label {

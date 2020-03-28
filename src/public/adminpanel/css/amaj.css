@@ -33,9 +33,22 @@ body {
   }
 }
 
+.footer-copyright {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: -1;
+  padding-left: 290px;
+  padding-right: 20px;
+}
+
+.close-menu .footer-copyright {
+  padding-left: 70px;
+}
+
 .layout {
   padding-left: 290px;
-  padding-right: 30px;
+  padding-right: 20px;
   padding-top: 75px;
   height: 100%;
   -webkit-transition: .2s;
@@ -83,7 +96,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  z-index: 1;
+  z-index: 100;
   -webkit-transition: .2s;
   transition: .2s;
 }
@@ -225,7 +238,7 @@ body {
   height: 100%;
   -webkit-box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.2);
-  z-index: 2;
+  z-index: 200;
   -webkit-transition: .2s;
   transition: .2s;
 }
@@ -280,10 +293,11 @@ body {
 
 .card {
   border: 0;
-  -webkit-box-shadow: 0px 5px 28px rgba(0, 0, 0, 0.05);
-          box-shadow: 0px 5px 28px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 0px 5px 28px rgba(0, 0, 0, 0.16);
+          box-shadow: 0px 5px 28px rgba(0, 0, 0, 0.16);
   background-color: #fff;
-  border-radius: 10px;
+  border-radius: 0;
+  margin-bottom: 50px;
 }
 
 .btn {
@@ -327,11 +341,16 @@ body {
   right: 0;
 }
 
+.btn {
+  border-radius: 0;
+}
+
 .btn.btn-success {
   color: #fff !important;
   background-color: #43a047;
 }
 
+.btn.btn-primary,
 .btn.btn-info {
   color: #fff !important;
   background-color: #9c27b0;
@@ -365,6 +384,15 @@ body {
 .dt-bootstrap4 .table th {
   padding: 0.75rem;
   font-weight: 400;
+}
+
+.dt-bootstrap4 .table.responsive tbody tr td:last-child {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translate(0);
+          transform: translate(0);
 }
 
 .dt-bootstrap4 .table tbody tr td {
@@ -529,7 +557,8 @@ input.form-control {
   border-radius: 0 !important;
 }
 
-.form-group .select2-container--default.focus ~ .control-label,
+.form-group .select2-container--default:placeholder-shown ~ .control-label, .form-group .select2-container--default.focus ~ .control-label,
+.form-group .form-control:placeholder-shown ~ .control-label,
 .form-group .form-control.focus ~ .control-label {
   -webkit-transform: translateY(0);
           transform: translateY(0);
@@ -579,9 +608,12 @@ input.form-control {
   font-size: 80%;
 }
 
-.select2-container .select2-selection--single {
+.form-group .control-label.uploder-label {
+  left: 130px;
+}
+
+.select2-container .select2-selection {
   border: 0 !important;
-  border-bottom: solid 1px #ccc !important;
   border-radius: 0 !important;
 }
 
@@ -638,5 +670,15 @@ input.form-control {
     -webkit-transform: scale(2.5);
             transform: scale(2.5);
   }
+}
+
+.row-margin-5 {
+  margin-left: -5px;
+  margin-right: -5px;
+}
+
+.row-margin-5 [class^='col-'] {
+  padding-right: 5px;
+  padding-left: 5px;
 }
 /*# sourceMappingURL=amaj.css.map */

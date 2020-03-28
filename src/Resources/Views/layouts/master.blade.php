@@ -45,6 +45,10 @@
         </div> <!--/.main-->
     </div>
 
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <a href="http://amajgroup.com/"> amajgroup.com</a>
+    </div>
+
 @include(config('crud.admin-panel').'::layouts.footer')
 
 </body>
