@@ -196,11 +196,11 @@
                     });
                 },
 
-                rowReorder: {
-                    dataSrc: 'sort_order',
-                    update: false, // this is key to prevent DT auto update
-                    select: 'reorder'
-                }
+                // rowReorder: {
+                //     dataSrc: 'sort_order',
+                //     update: false, // this is key to prevent DT auto update
+                //     select: 'reorder'
+                // }
 
             });
 
