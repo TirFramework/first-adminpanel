@@ -13,62 +13,6 @@
 <script src="/adminpanel/js/l10n/fa.js"></script>
 
 
-
-<script>
-
-    function addCommand(number){
-        number = number.toString().replace(/\D/g, "");
-        number = number.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
-        return number;
-    }
-
-    function priceInput(input){
-            var PRICE = $(input).val();
-            var classname = $(input).attr('class');
-            var placeholder = $(input).attr('placeholder');
-
-            classname = classname.replace('price', "");
-
-            PRICE = addCommand(PRICE);
-
-            $(input).wrap( '<div class="price-group"></div>' );
-            $(input).after('<input class="cloneprice form-control" placeholder="'+placeholder+'" type="text" value="'+PRICE+'" />' );
-
-            $(input).hide();
-    }
-
-    $(".PRICE, .price").each(function() {
-        var PRICE = $(this).html();
-        PRICE = PRICE.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
-        $(this).html(PRICE);
-    });
-
-
-
-    function cloneprice(input){
-        var oldinput = $(input).parent('.price-group').find("input.price");
-
-        var PRICE = $(input).val();
-
-        PRICE = addCommand(PRICE);
-
-        $(input).val(PRICE);
-
-        oldprice = PRICE.replace(/\D/g, "");
-
-        oldinput.val(oldprice);
-    }
-
-    $(document).on('keyup', 'input.cloneprice', function(){
-        cloneprice(this);
-    });
-
-    $("input.price").each( function () {
-        priceInput(this);
-    });
-
-
-</script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="/adminpanel/js/bootstrap.min.js"></script>
 
@@ -252,11 +196,11 @@
                     });
                 },
 
-                rowReorder: {
-                    dataSrc: 'sort_order',
-                    update: false, // this is key to prevent DT auto update
-                    select: 'reorder'
-                }
+                // rowReorder: {
+                //     dataSrc: 'sort_order',
+                //     update: false, // this is key to prevent DT auto update
+                //     select: 'reorder'
+                // }
 
             });
 
