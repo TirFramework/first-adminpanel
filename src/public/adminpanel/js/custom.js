@@ -62,6 +62,20 @@ $('.form-group').on('change keyup focus blur mousedown', '.form-control', functi
 
 
 
+$(document).ready(function () {
+    $('.form-control').each(function () {
+        checker(this);
+    });
+});
+
+
+window.onload = function () {
+    $('.form-control').each(function () {
+        checker(this);
+    });
+}
+
+
 function checker(elemnt){
     if ($(elemnt).val())
         $(elemnt).addClass("focus")
