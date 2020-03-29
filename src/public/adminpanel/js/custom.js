@@ -60,9 +60,7 @@ $('.form-group').on('change keyup focus blur mousedown', '.form-control', functi
     checker(this);
 });
 
-$('.form-control').each(function(){
-    checker(this);
-})
+
 
 function checker(elemnt){
     if ($(elemnt).val())
