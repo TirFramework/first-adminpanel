@@ -51,10 +51,11 @@
 
 
 
-                    <li class="dropdown"><a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                    {{-- <li class="dropdown"><a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
                     <em class="far fa-bell"></em>
-                    {{-- <span class="label label-info"> --}}
-                        5</span>
+                    <span class="label label-info">
+                        5
+                    </span>
                     </a>
                     <ul class="dropdown-menu dropdown-alerts">
                     <li><a href="#">
@@ -72,7 +73,7 @@
                     <span class="pull-right text-muted small">4 mins ago</span></div>
                     </a></li>
                     </ul>
-                    </li>
+                    </li> --}}
 
 
                 </ul>

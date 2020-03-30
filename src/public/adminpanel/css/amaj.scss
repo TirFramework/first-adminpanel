@@ -4,6 +4,8 @@ $haeder_height: 65;
 $sidebar_width_close: 50;
 
 $blue: #7222a1;
+$red: #ff4081;
+
 $body_background: #f9f9f9;
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap');
@@ -42,7 +44,7 @@ body {
 .layout {
     padding-left: $sidebar_width + 30 + px;
     padding-right: 20px;
-    padding-top: $haeder_height + 10 + px;
+    padding-top: $haeder_height + 20 + px;
     height: 100%;
     transition: .2s;
     .close-menu & {
@@ -516,4 +518,33 @@ input.form-control {
     }
 }
 
+
+.alert {
+    position: fixed;
+    z-index: 100;
+    right: 20px;
+    min-width: 360px;
+    bottom: 0;
+    transform: translateX( calc(100% + 40px) );
+    transition: .3s;
+    transition-timing-function: cubic-bezier(0.03, 0.4, 0.27, 1.2);
+    color: #fff;
+    padding-top: 30px;
+    .close{
+        color: #fff;
+        font-size: 11px;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        &:hover{
+            color: #fff !important;
+        }
+    }
+    &.show{
+        transform: translateX(0);
+    }
+    &.bg-danger{
+        background: rgba($color: $red, $alpha: 0.7) !important;
+    }
+}
 

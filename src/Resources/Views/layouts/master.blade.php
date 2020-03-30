@@ -13,7 +13,7 @@
             {{--Custom System message--}}
             @if ($errors->any())
                 <div class="alert bg-danger alert-dismissable fade show" role="alert">
-                    <a href="#" class="pull-right"><em class="fas fa-lg fa-times" data-dismiss="alert" aria-label="close"></em></a>
+                    <a href="#" class="close"><em class="fas fa-lg fa-times" data-dismiss="alert" aria-label="close"></em></a>
                     <ul>
                         @foreach ($errors->all() as $error)
                             <li> {{ $error }}</li>

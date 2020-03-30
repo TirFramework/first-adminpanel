@@ -12,10 +12,8 @@
                 transform: translateY(0);
                 font-size: 80%;
             }
-
         }
         // &:valid ,
-
         &:focus {
             outline: none  !important;
             box-shadow: none !important;
@@ -64,10 +62,20 @@
     ~ .control-label {
         transform: translateY(0);
         font-size: 80%;
-        color: $blue;
+        // color: $blue;
     }
 }
-
+.select2-selection__rendered{
+    color: #000 !important;
+}
+.select2-selection__placeholder{
+    color: #9e9e9e !important;
+}
+.select2-search__field{
+    &::placeholder{
+        color: #9e9e9e !important;
+    }
+}
 :focus {
     outline: none !important;
 }
