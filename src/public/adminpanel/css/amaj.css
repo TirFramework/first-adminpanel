@@ -752,6 +752,10 @@ input.form-control {
   background: rgba(255, 64, 129, 0.7) !important;
 }
 
+.alert.bg-success {
+  background: rgba(67, 160, 71, 0.7) !important;
+}
+
 .profile-avatar {
   width: 35px;
   height: 35px;

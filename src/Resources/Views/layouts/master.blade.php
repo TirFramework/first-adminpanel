@@ -24,10 +24,14 @@
 
             {{--Custom Success message--}}
             @if (Session::has('message'))
-                <div class="alert bg-success" role="alert">
-                    <a href="#" class="pull-right"><em class="fas fa-lg fa-times" data-dismiss="alert" aria-label="close"></em></a>
-                    <em class="fas fa-lg fa-exclamation-circle">&nbsp;</em>
-                    {{ Session::get('message') }}
+                <div class="alert bg-success fade show" role="alert">
+                    <a href="#" class="close"><em class="fas fa-lg fa-times" data-dismiss="alert" aria-label="close"></em></a>
+                    {{-- <em class="fas fa-lg fa-exclamation-circle">&nbsp;</em> --}}
+                    <ul>
+                        <li>
+                            {{ Session::get('message') }}
+                        </li>
+                    </ul>
                 </div>
             @endif
 
