@@ -10,7 +10,12 @@
             <nav class="d-flex">
                 <div class="profile-sidebar d-flex">
                     <div class="profile-userpic mx-2">
-                        <img src="http://placehold.it/30/30a5ff/fff" width="30" class="img-responsive rounded-circle" alt="">
+                        {{-- <img src="http://placehold.it/30/30a5ff/fff" width="30" class="img-responsive rounded-circle" alt=""> --}}
+
+                        <span class="profile-avatar">
+                            {{ substr(Auth::user()->name ,0, 1) }}
+                        </span>
+
                     </div>
                     {{-- <div class="profile-usertitle">
                         <div class="profile-usertitle-name">
@@ -23,21 +28,19 @@
                     </div> --}}
                     <div class="clear"></div>
                 </div>
-                <ul class="nav navbar-top-links ">
-                    <li class="dropdown mx-2">
+                <ul class="nav navbar-top-links align-items-center">
+                    {{-- <li class="dropdown mx-2">
                         <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
                             <em class="fas fa-bolt"></em>
-                            {{-- <span class="label label-info"></span> --}}
                         </a>
                         <ul class="dropdown-menu dropdown-alerts">
-                            <li><a href="{{url('/')}}/admin/clearcache">
-                                    <div>
+                            <li>
+                                <a href="{{url('/')}}/admin/clearcache">
                                         <em class="fas fa-remove"></em> Clear Cache
-                                    </div>
                                 </a>
                             </li>
                         </ul>
-                    </li>
+                    </li> --}}
 
 
                     {{-- @if(Acl::checkAccess('message', 'edit') )

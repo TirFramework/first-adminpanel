@@ -32,7 +32,7 @@ $(document).on('click', '.panel-heading span.clickable', function(e){
 })
 
 
-$('.dropdown-toggle').click(function () {
+$('.main-nav .dropdown-toggle').click(function () {
     $(this).siblings('ul').slideToggle()
     $(this).parents('.dropdown').toggleClass('open')
 })
