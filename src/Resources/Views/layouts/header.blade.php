@@ -11,9 +11,8 @@
                 <div class="profile-sidebar d-flex">
                     <div class="profile-userpic mx-2">
                         {{-- <img src="http://placehold.it/30/30a5ff/fff" width="30" class="img-responsive rounded-circle" alt=""> --}}
-
                         <span class="profile-avatar">
-                            {{ substr(Auth::user()->name ,0, 1) }}
+                            {{ substr(Sentinel::getUser()->name ,0, 1) }}
                         </span>
 
                     </div>
@@ -80,6 +79,9 @@
 
 
                 </ul>
+            </nav>
+            <nav class="d-flex">
+                <p>{{app()->getLocale()}}</p>
             </nav>
         </div>
 
