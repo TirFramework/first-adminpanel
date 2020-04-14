@@ -1,5 +1,7 @@
 
 <script src="/adminpanel/js/jquery-3.3.1.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+
 <script src="/adminpanel/js/flatpickr.min.js"></script>
 <script src="/adminpanel/js/jdate.min.js"></script>
 
@@ -7,7 +9,7 @@
 
 
 <script>
-    window._Date = window.Date ;
+    window._Date = window.Date
     // console.log(window.Date);
 </script>
 <script src="/adminpanel/js/l10n/fa.js"></script>
