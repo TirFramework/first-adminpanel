@@ -1,5 +1,6 @@
 
 <script src="/adminpanel/js/jquery-3.3.1.js"></script>
+@stack('firstScripts')
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 
 <script src="/adminpanel/js/flatpickr.min.js"></script>
@@ -39,7 +40,7 @@
 <script src="/adminpanel/js/custom.js"></script>
 
 
-<script src="/vendor/laravel-filemanager/js/lfm.js"></script>
+<script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
 {{--<script> ('#lfm').filemanager('image'); </script>--}}
 
 <script src="/adminpanel/libs/tinymce/tinymce.min.js"></script>
