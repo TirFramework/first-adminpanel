@@ -27,6 +27,8 @@ class FirstPanelServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__.'/Resources/Views', 'first-panel');
 
+        $this->loadTranslationsFrom(__DIR__ . '/Resources/Lang/', 'first-panel');
+
         $this->publishes([
             __DIR__ . '/public/adminpanel' => public_path('adminpanel'),
         ], 'first-panel');

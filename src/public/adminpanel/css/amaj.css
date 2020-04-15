@@ -1,4 +1,49 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap");
+@font-face {
+  font-family: "IRANSans";
+  font-style: normal;
+  font-weight: bold;
+  src: url("../fonts/IRANSansWeb_Bold.eot");
+  src: url("../fonts/IRANSansWeb_Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/IRANSansWeb_Bold.woff2") format("woff2"), url("../fonts/IRANSansWeb_Bold.woff") format("woff"), url("../fonts/IRANSansWeb_Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "IRANSans";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/IRANSansWeb_Medium.eot");
+  src: url("../fonts/IRANSansWeb_Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/IRANSansWeb_Medium.woff2") format("woff2"), url("../fonts/IRANSansWeb_Medium.woff") format("woff"), url("../fonts/IRANSansWeb_Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "IRANSans";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/IRANSansWeb_Light.eot");
+  src: url("../fonts/IRANSansWeb_Light.eot?#iefix") format("embedded-opentype"), url("../fonts/IRANSansWeb_Light.woff2") format("woff2"), url("../fonts/IRANSansWeb_Light.woff") format("woff"), url("../fonts/IRANSansWeb_Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "IRANSans";
+  font-style: normal;
+  font-weight: 200;
+  src: url("../fonts/IRANSansWeb_UltraLight.eot");
+  src: url("../fonts/IRANSansWeb_UltraLight.eot?#iefix") format("embedded-opentype"), url("../fonts/IRANSansWeb_UltraLight.woff2") format("woff2"), url("../fonts/IRANSansWeb_UltraLight.woff") format("woff"), url("../fonts/IRANSansWeb_UltraLight.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "IRANSans";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/IRANSansWeb.eot");
+  src: url("../fonts/IRANSansWeb.eot?#iefix") format("embedded-opentype"), url("../fonts/IRANSansWeb.woff2") format("woff2"), url("../fonts/IRANSansWeb.woff") format("woff"), url("../fonts/IRANSansWeb.ttf") format("truetype");
+}
+
+body.rtl {
+  font-family: "IRANSans" !important;
+  line-height: 1.5;
+}
+
 html {
   height: 100%;
 }
@@ -7,6 +52,10 @@ body {
   height: 100%;
   background: #f9f9f9;
   font-family: 'Open Sans', sans-serif;
+}
+
+body.rtl {
+  direction: rtl;
 }
 
 @-webkit-keyframes AnimationName {
@@ -42,8 +91,18 @@ body {
   padding-right: 20px;
 }
 
+.rtl .footer-copyright {
+  padding-left: 20px;
+  padding-right: 290px;
+}
+
 .close-menu .footer-copyright {
   padding-left: 70px;
+}
+
+.rtl.close-menu .footer-copyright {
+  padding-right: 70px;
+  padding-left: 20px;
 }
 
 .layout {
@@ -55,8 +114,18 @@ body {
   transition: .2s;
 }
 
+.rtl .layout {
+  padding-left: 20px;
+  padding-right: 290px;
+}
+
 .close-menu .layout {
   padding-left: 70px;
+}
+
+.rtl.close-menu .layout {
+  padding-right: 70px;
+  padding-left: 20px;
 }
 
 .layout::before {
@@ -101,8 +170,18 @@ body {
   transition: .2s;
 }
 
+.rtl .header {
+  padding-left: 30px;
+  padding-right: 290px;
+}
+
 .close-menu .header {
   padding-left: 70px;
+}
+
+.rtl.close-menu .header {
+  padding-right: 70px;
+  padding-left: 20px;
 }
 
 .header .navbar-header {
@@ -169,6 +248,10 @@ body {
 
 .main-nav li.open {
   background: rgba(0, 0, 0, 0.05);
+}
+
+.main-nav li.open > ul {
+  display: block !important;
 }
 
 .main-nav li a {
@@ -243,6 +326,11 @@ body {
   z-index: 200;
   -webkit-transition: .2s;
   transition: .2s;
+}
+
+.rtl .sidebar {
+  left: auto;
+  right: 0;
 }
 
 .close-menu .sidebar {
@@ -475,6 +563,15 @@ body {
   margin: 0 4px;
 }
 
+.dt-bootstrap4 .table tbody tr td:first-child {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translate(0);
+          transform: translate(0);
+}
+
 .dt-bootstrap4 .table tbody tr:hover td:last-child {
   -webkit-transition-delay: 0s;
           transition-delay: 0s;
@@ -633,6 +730,11 @@ input.form-control {
   padding-top: 30px;
 }
 
+.rtl .alert {
+  right: auto;
+  left: 20px;
+}
+
 .alert .close {
   color: #fff;
   font-size: 11px;
@@ -719,6 +821,11 @@ input.form-control {
   color: #ff4081 !important;
 }
 
+.rtl .remove-item {
+  right: auto;
+  left: 15px;
+}
+
 .remove-item svg {
   margin: 0;
 }
@@ -742,6 +849,13 @@ input.form-control {
 
 .ui-sortable .item::before:hover {
   opacity: .5;
+}
+
+.rtl .ui-sortable .item::before {
+  right: 0;
+  left: auto;
+  border-right: 0;
+  border-left: solid 1px #c3c3c3;
 }
 
 .plus {
@@ -770,5 +884,21 @@ input.form-control {
 .row-margin-15 [class^="col-"] {
   padding-right: 7.5px;
   padding-left: 7.5px;
+}
+
+.select2-selection--multiple {
+  height: 35px !important;
+}
+
+body.rtl .select2-container--default .select2-selection--single .select2-selection__arrow {
+  left: 1px !important;
+}
+
+body.rtl .select2-container--default .select2-selection--single .select2-selection__rendered {
+  padding-right: 10px;
+}
+
+body.rtl .select2-container .select2-search--inline .select2-search__field {
+  direction: rtl;
 }
 /*# sourceMappingURL=amaj.css.map */

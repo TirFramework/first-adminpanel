@@ -4,7 +4,9 @@
 <div id="sidebar-collapse" class="sidebar">
 
     <div class="header-sidebar">
-        <a class="navbar-brand" target="_blank"><span>{{config('app.name')}}</span> Admin</a>
+        <a class="navbar-brand" target="_blank"><span>{{config('app.name')}}</span>
+            Admin
+        </a>
 
         <button class="main-nav-toggle">
             <i class="fas fa-bars"></i>
@@ -19,40 +21,89 @@
     {{--    </form>--}}
     <nav class="main-nav">
 
-<ul class="">
-    <li> <a href="#"> <span class="icon"> <i class="far fa-star"></i> </span> <span class="text">test</span> </a> </li>
-    <li> <a href="#"> <span class="icon"> <i class="far fa-star"></i> </span> <span class="text">test</span> </a> </li>
-    <li> <a href="#"> <span class="icon"> <i class="far fa-star"></i> </span> <span class="text">test</span> </a> </li>
-    <li class="dropdown">
-        <a href="#" class="dropdown-toggle"> <span class="icon"> <i class="far fa-star"></i> </span> <span class="text">test</span> </a>
-        <ul>
-            <li> <a href="#"> <span class="icon"> <i class="far fa-star"></i> </span> <span class="text">test</span> </a> </li>
-            <li> <a href="#"> <span class="icon"> <i class="far fa-star"></i> </span> <span class="text">test</span> </a> </li>
-        </ul>
-    </li>
-    @php
-        //$modules = Module::all();
-    @endphp
+        <ul class="">
+            <li>
+                <a href="/admin">
+                    <span class="icon"> <i class="fas fa-tachometer-alt"></i> </span>
+                    <span class="text">@lang('first-panel::panel.dashboard')</span>
+                </a>
+            </li>
 
 
-    {{-- @foreach ($modules as $module)
+
+            <li class="dropdown
+    {{ (request()->is('admin/attribute*')) ? 'open' : '' }}
+    {{ (request()->is('admin/attributeSet*')) ? 'open' : '' }}
+    {{ (request()->is('admin/product*')) ? 'open' : '' }}
+    {{ (request()->is('admin/option*')) ? 'open' : '' }}
+    ">
+                <a href="#" class="dropdown-toggle"> <span class="icon"> <i class="fas fa-box"></i> </span> <span
+                        class="text">@lang('first-panel::panel.products')</span> </a>
+                <ul>
+                    <li class="{{ (request()->is('admin/attribute/*')) ? 'active' : '' }}">
+                        <a href="{{ route('attribute.index') }} "> <span class="icon"> <i class="fas fa-check-circle"></i>
+                            </span> <span class="text">@lang('first-panel::panel.attributes')</span>
+                        </a>
+                    </li>
+                    <li class="{{ (request()->is('admin/attributeSet/*')) ? 'active' : '' }}">
+                        <a href="{{ route('attributeSet.index') }} "> <span class="icon"> <i class="far fa-star"></i>
+                            </span> <span class="text">@lang('first-panel::panel.attributeSets')</span>
+                        </a>
+                    </li>
+                    <li class="{{ (request()->is('admin/product/*')) ? 'active' : '' }}">
+                        <a href="{{ route('product.index') }} "> <span class="icon"> <i class="fas fa-boxes"></i> </span>
+                            <span class="text">@lang('first-panel::panel.products')</span>
+                        </a>
+                    </li>
+                    <li class="{{ (request()->is('admin/option/*')) ? 'active' : '' }}">
+                        <a href="{{ route('option.index') }} "> <span class="icon"> <i class="fas fa-certificate"></i> </span>
+                            <span class="text">@lang('first-panel::panel.options')</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+            <li class="dropdown
+    {{ (request()->is('admin/user*')) ? 'open' : '' }}
+    ">
+                <a href="#" class="dropdown-toggle"> <span class="icon"> <i class="fas fa-user-tie"></i> </span> <span
+                        class="text">@lang('first-panel::panel.user')</span> </a>
+                <ul>
+                    <li class="{{ (request()->is('admin/user/*')) ? 'active' : '' }}">
+                        <a href="{{ route('user.index') }} "> <span class="icon"> <i class="fas fa-users"></i>
+                            </span> <span class="text">@lang('first-panel::panel.users')</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+
+
+            @php
+            //$modules = Module::all();
+            @endphp
+
+
+            {{-- @foreach ($modules as $module)
         @if ($module['slug'] != 'crud' && $module['slug'] != 'newsletter' && Acl::checkAccess($module['slug'],'index') !=false )
             @component('admin.components.navLink')
                 {{$module['slug']}}
             @endcomponent
-        @endif
-    @endforeach --}}
+            @endif
+            @endforeach --}}
 
-</ul>
-</nav>
+        </ul>
+    </nav>
     {{-- <ul class="nav menu">
         @if(Acl::checkAccess('menu', 'index')!=false || Acl::checkAccess('menuitem', 'index') != false)
 
         <li class="parent "><a data-toggle="collapse" href="#sub-item-1" aria-expanded="{{ ($routeName == 'menu.index') ? 'active':'' }}">
-            <em class="fas fa-ellipsis-v">&nbsp;</em>
-            @lang('panel.menu')
-            <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fas fa-plus"></em></span>
-            </a>
+    <em class="fas fa-ellipsis-v">&nbsp;</em>
+    @lang('panel.menu')
+    <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fas fa-plus"></em></span>
+    </a>
 
     <ul class="children collapse" id="sub-item-1">
         @if(Acl::checkAccess('menu','index') !=false)
