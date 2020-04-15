@@ -4,18 +4,16 @@ use App\Modules\Authorization\acl;
 <div id="result"></div>
 
 <div class="card-header d-flex justify-content-between">
-
     @if(isset($trash))
-    <div class="form-group ">
-        {!! Form::select('action_select',$actions['trash'],null,['id'=>'actionSelect','class' => 'form-control
-        input-sm','placeholder'=>trans('crud::panel.nothing_selected')]) !!}
-    </div>
+            <div class="form-group ">
+                {!! Form::select('action_select',$actions['trash'],null,['id'=>'actionSelect','class' => 'form-control
+                input-sm','placeholder'=>trans('crud::panel.nothing_selected')]) !!}
+            </div>
 
 
-    <a type="button" id="action" class="btn btn-sm btn-danger pull-right">
-        {{trans('crud::panel.action')}} <i class="fas fa-hand-point-right"></i>
-    </a><span class="pull-right">&nbsp;</span>
-
+            <a type="button" id="action" class="btn btn-sm btn-danger pull-right">
+                {{trans('crud::panel.action')}} <i class="fas fa-hand-point-right"></i>
+            </a><span class="pull-right">&nbsp;</span>
 
     <a type="button" href="{{route($name.'.index')}}" class="btn btn-sm btn-info">
         <i class="fas fa-hand-point-left"></i> {{trans('crud::panel.back')}}
@@ -40,11 +38,11 @@ use App\Modules\Authorization\acl;
                 {{trans('crud::panel.action')}} <i class="fas fa-hand-point-right mr-0 ml-1"></i>
             </a>
 
-            <div class="">
-                {!! Form::select('action_select',$actions['index'],null,['id'=>'actionSelect','class' =>
-                'form-control
-                input-sm','placeholder'=>trans('crud::panel.nothing_selected')]) !!}
-            </div>
+                <div class="">
+                    {!! Form::select('action_select',$actions['index'],null,['id'=>'actionSelect','class' =>
+                    'form-control
+                    input-sm','placeholder'=>trans('crud::panel.nothing_selected')]) !!}
+                </div>
         </div>
 
         {{-- @if(Acl::checkAccess($name, 'delete')) --}}
@@ -56,5 +54,6 @@ use App\Modules\Authorization\acl;
 
     {{-- @endif --}}
     @endif
+
 </div>
 

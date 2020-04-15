@@ -39,3 +39,4 @@
     <script src="/adminpanel/js/html5shiv.js"></script>
     <script src="/adminpanel/js/respond.min.js"></script>
     <![endif]-->
+</head>
