@@ -165,9 +165,6 @@ body {
         display: block;
         &.open {
             background: rgba(0, 0, 0, 0.05);
-            >ul{
-                display: block !important;
-            }
         }
         a {
             padding: 5px 15px;
@@ -746,18 +743,17 @@ input.form-control {
 
 
 
-.select2-selection--multiple{
-    height: 35px !important;
+
+
+
+
+
+@import 'custom/select2';
+
+.tab-content{
+    margin-top: -75px;
 }
 
 
-body.rtl .select2-container--default .select2-selection--single .select2-selection__arrow{
-  left: 1px !important;
-}
-body.rtl .select2-container--default .select2-selection--single .select2-selection__rendered{
-  padding-right: 10px;
-}
 
-body.rtl .select2-container .select2-search--inline .select2-search__field{
-    direction: rtl;
-}
+

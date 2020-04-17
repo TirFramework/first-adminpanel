@@ -32,10 +32,8 @@ $(document).on('click', '.panel-heading span.clickable', function(e){
 })
 
 
-$('.main-nav .dropdown-toggle').click(function (e) {
-    e.preventDefault();
-
-    // $(this).siblings('ul').slideToggle()
+$('.main-nav .dropdown-toggle').click(function () {
+    $(this).siblings('ul').slideToggle()
     $(this).parents('.dropdown').toggleClass('open')
 })
 

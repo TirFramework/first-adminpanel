@@ -250,10 +250,6 @@ body.rtl {
   background: rgba(0, 0, 0, 0.05);
 }
 
-.main-nav li.open > ul {
-  display: block !important;
-}
-
 .main-nav li a {
   padding: 5px 15px;
   display: block;
@@ -886,8 +882,16 @@ input.form-control {
   padding-left: 7.5px;
 }
 
-.select2-selection--multiple {
-  height: 35px !important;
+.select2-selection__rendered .select2-search.select2-search--inline {
+  width: 100%;
+}
+
+.select2-selection__rendered .select2-search.select2-search--inline input {
+  width: 100% !important;
+}
+
+.select2-selection {
+  height: 35px;
 }
 
 body.rtl .select2-container--default .select2-selection--single .select2-selection__arrow {
@@ -900,5 +904,9 @@ body.rtl .select2-container--default .select2-selection--single .select2-selecti
 
 body.rtl .select2-container .select2-search--inline .select2-search__field {
   direction: rtl;
+}
+
+.tab-content {
+  margin-top: -75px;
 }
 /*# sourceMappingURL=amaj.css.map */
