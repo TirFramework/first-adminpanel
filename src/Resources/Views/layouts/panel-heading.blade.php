@@ -24,8 +24,8 @@ use App\Modules\Authorization\acl;
     <div class="d-flex">
         @if($crud->permission['create'] != 'deny')
         <a type="button" href="{{route($name.'.create')}}" class="btn btn-sm btn-success ">
-            <i class="fas fa-plus"></i> <span class="hidden-xs">{{trans('crud::panel.new')}}
-                {{trans("$name::panel.$name")}}</span>
+            <i class="fas fa-plus"></i> <span class="hidden-xs">
+                {{trans("$name::panel.new_$name")}}</span>
         </a>
         @endif
     </div>
@@ -41,7 +41,7 @@ use App\Modules\Authorization\acl;
                 <div class="">
                     {!! Form::select('action_select',$actions['index'],null,['id'=>'actionSelect','class' =>
                     'form-control
-                    input-sm','placeholder'=>trans('crud::panel.nothing_selected')]) !!}
+                    input-sm','placeholder'=>trans('crud::panel.select-action')]) !!}
                 </div>
         </div>
 
