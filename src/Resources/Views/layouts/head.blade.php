@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,10 +11,13 @@
 {{--    <link href="/adminpanel/css/font-awesome.min.css" rel="stylesheet">--}}
     <link href="/adminpanel/css/datepicker3.css" rel="stylesheet">
     <link href="/adminpanel/css/bootstrap-table.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/adminpanel/libs/DataTables/datatables.min.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"/>
-    <link rel="stylesheet" type="text/css" href="/adminpanel/libs/bootstrapSelect/dist/css/bootstrap-select.min.css"/>
-    <link href="/adminpanel/libs/select2/select2.min.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" type="text/css" href="/adminpanel/libs/DataTables/datatables.min.css"/> -->
+    <link rel="stylesheet" type="text/css" href="/adminpanel/libs/DataTables/datatables4.min.css"/>
+
+    {{-- <link rel="stylesheet" type="text/css" href="/adminpanel/libs/bootstrapSelect/dist/css/bootstap-select.min.css"/> --}}
+    
+    <link href="/adminpanel/libs/select2/css/select2.css" rel="stylesheet" />
+    <link href="/adminpanel/libs/select2/css/select2-bootstrap4.css" rel="stylesheet" />
     <link href="/adminpanel/css/flatpickr.min.css" rel="stylesheet" />
     <link href="/adminpanel/css/flatpickr.rtl.css" rel="stylesheet">
 

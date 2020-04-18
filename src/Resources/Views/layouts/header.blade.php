@@ -4,7 +4,7 @@
         <div class="navbar-header">
             <nav class="flex-grow-1 mr-4">
                 <form role="search">
-                    <input type="text" class="form-control header-search-input" placeholder="Search">
+                    <input type="text" class="form-control header-search-input" placeholder="@lang('first-panel::panel.search')">
                 </form>
             </nav>
             <nav class="d-flex">

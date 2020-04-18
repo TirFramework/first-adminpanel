@@ -8,6 +8,8 @@
 
 <script src="/adminpanel/libs/jquery-validate/jquery.validate.min.js"></script>
 
+<script src="/adminpanel/libs/jquery-validate/localization/messages_fa.js"></script>
+
 
 <script>
     window._Date = window.Date
@@ -31,9 +33,16 @@
 
 
 <!-- Bootstrap Select  -->
-<script type="text/javascript" src="/adminpanel/libs/bootstrapSelect/dist/js/bootstrap-select.js"></script>
+<!-- <script type="text/javascript" src="/adminpanel/libs/bootstrapSelect/dist/js/bootstrap-select.js"></script> -->
+
+
+
 <!-- Select2 -->
-<script src="/adminpanel/libs/select2/select2.min.js"></script>
+<script src="/adminpanel/libs/select2/js/select2.min.js"></script>
+
+@if( config('app.locale') == 'fa' )
+<script src="/adminpanel/libs/select2/js/i18n/fa.js"></script>
+@endif
 
 
 <script src="/adminpanel/js/bootstrap-datepicker.js"></script>
@@ -59,7 +68,11 @@
 //        size: 6
 //    });
 
-    $('.select2').select2();
+    $('.select2').select2({
+        dir: $('body').attr('dir'),
+        language: $('html').attr('lang'),
+
+    });
 
 
     //create and config editor
@@ -193,7 +206,9 @@
                             if (filters[i].length > 6){
                                 select.attr('data-live-search','ture')
                             }
-                            $('.select2').select2();
+                            $('.select2').select2({
+                                dir: $('body').attr('dir'),
+                            });
 
                         }
                     });

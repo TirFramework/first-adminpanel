@@ -33,7 +33,7 @@ $(document).on('click', '.panel-heading span.clickable', function(e){
 
 
 $('.main-nav .dropdown-toggle').click(function () {
-    $(this).siblings('ul').slideToggle()
+    // $(this).siblings('ul').slideToggle()
     $(this).parents('.dropdown').toggleClass('open')
 })
 
@@ -81,7 +81,10 @@ function checker(elemnt){
         $(elemnt).addClass("focus")
     else
         $(elemnt).removeClass('focus');
-
 }
 
 
+
+setTimeout(() => {
+    $('.alert').removeClass('show');
+}, 5000);

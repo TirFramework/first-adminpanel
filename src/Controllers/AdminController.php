@@ -6,5 +6,6 @@ class AdminController extends Controller
 {
     public function dashboard()
     {
+        dd('tesxt');
     }
 }
