@@ -42,5 +42,7 @@ return [
     
     'search' => 'جستجو',
 
+    'admin_panel' => 'پنل مدیریت',
+
 
 ];

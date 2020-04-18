@@ -5,7 +5,7 @@
 
     <div class="header-sidebar">
         <a class="navbar-brand" target="_blank"><span>{{config('app.name')}}</span>
-            Admin
+            @lang('first-panel::panel.admin_panel')
         </a>
 
         <button class="main-nav-toggle">

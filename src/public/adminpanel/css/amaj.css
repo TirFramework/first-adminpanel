@@ -521,8 +521,6 @@ div.dataTables_wrapper div.dataTables_info {
 
 .table > tbody > tr > td:last-child {
   border-left: 1px solid #eee;
-  text-align: center;
-  display: flex;
 }
 
 .table > tbody > tr:last-child > td {
@@ -562,30 +560,20 @@ div.dataTables_wrapper div.dataTables_info {
 }
 
 .dt-bootstrap4 .table tbody tr td:last-child {
-  transition: transform 0.2s;
-  transform: translate(50px);
-  opacity: 0;
-  transition-delay: .2s;
-  justify-content: flex-end;
+  text-align: right;
+  padding-right: 20px;
 }
 
 .dt-bootstrap4 .table tbody tr td:last-child a {
-  margin: 0 4px;
+  margin: 0 0 0 20px;
+  font-size: 22px;
+  line-height: 0;
+  vertical-align: middle;
 }
 
-.dt-bootstrap4 .table tbody tr td:first-child {
-  transition-delay: 0s;
-  opacity: 1;
-  visibility: visible;
-  transform: translate(0);
-  display: table-cell;
-}
-
-.dt-bootstrap4 .table tbody tr:hover td:last-child {
-  transition-delay: 0s;
-  opacity: 1;
-  visibility: visible;
-  transform: translate(0);
+.rtl .dt-bootstrap4 .table tbody tr td:last-child {
+  padding-left: 20px;
+  text-align: left;
 }
 
 .dt-bootstrap4 .table tbody tr.selected td {
@@ -613,6 +601,7 @@ div.dataTables_wrapper div.dataTables_info {
 
 .dt-bootstrap4 .btn-group .btn {
   margin: 0 10px;
+  font-size: 12px;
 }
 
 .dt-bootstrap4 .btn-group .btn:last-child {
@@ -631,6 +620,11 @@ div.dataTables_wrapper div.dataTables_info {
 .rtl .dt-bootstrap4 .btn-group .btn:first-child {
   margin-right: 0;
   margin-left: 10px;
+}
+
+.rtl div.dataTables_wrapper div.dataTables_filter input {
+  margin-right: 0.5em;
+  margin-left: 0;
 }
 
 button {
