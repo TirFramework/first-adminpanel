@@ -32,14 +32,24 @@
 
 
             <li class="dropdown
-    {{ (request()->is('admin/attribute*')) ? 'open' : '' }}
-    {{ (request()->is('admin/attributeSet*')) ? 'open' : '' }}
-    {{ (request()->is('admin/product*')) ? 'open' : '' }}
-    {{ (request()->is('admin/option*')) ? 'open' : '' }}
-    ">
+                {{ (request()->is('admin/attribute*')) ? 'open' : '' }}
+                {{ (request()->is('admin/attributeSet*')) ? 'open' : '' }}
+                {{ (request()->is('admin/product*')) ? 'open' : '' }}
+                {{ (request()->is('admin/option*')) ? 'open' : '' }}
+            ">
                 <a href="#" class="dropdown-toggle"> <span class="icon"> <i class="fas fa-box"></i> </span> <span
                         class="text">@lang('first-panel::panel.products')</span> </a>
                 <ul>
+                    <li class="{{ (request()->is('admin/product/*')) ? 'active' : '' }}">
+                        <a href="{{ route('product.index') }} "> <span class="icon"> <i class="fas fa-boxes"></i> </span>
+                            <span class="text">@lang('first-panel::panel.products')</span>
+                        </a>
+                    </li>
+                    <li class="{{ (request()->is('admin/category/*')) ? 'active' : '' }}">
+                        <a href="{{ route('category.index') }} "> <span class="icon"> <i class="fas fa-folder-open"></i> </span>
+                            <span class="text">@lang('first-panel::panel.categories')</span>
+                        </a>
+                    </li>
                     <li class="{{ (request()->is('admin/attribute/*')) ? 'active' : '' }}">
                         <a href="{{ route('attribute.index') }} "> <span class="icon"> <i class="fas fa-check-circle"></i>
                             </span> <span class="text">@lang('first-panel::panel.attributes')</span>
@@ -48,11 +58,6 @@
                     <li class="{{ (request()->is('admin/attributeSet/*')) ? 'active' : '' }}">
                         <a href="{{ route('attributeSet.index') }} "> <span class="icon"> <i class="far fa-star"></i>
                             </span> <span class="text">@lang('first-panel::panel.attributeSets')</span>
-                        </a>
-                    </li>
-                    <li class="{{ (request()->is('admin/product/*')) ? 'active' : '' }}">
-                        <a href="{{ route('product.index') }} "> <span class="icon"> <i class="fas fa-boxes"></i> </span>
-                            <span class="text">@lang('first-panel::panel.products')</span>
                         </a>
                     </li>
                     <li class="{{ (request()->is('admin/option/*')) ? 'active' : '' }}">
