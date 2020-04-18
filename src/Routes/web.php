@@ -16,6 +16,9 @@ Route::group(['middleware' => 'web'], function () {
 
     //add admin prefix and middleware for admin area to product package
     Route::group(['prefix' => 'admin', 'middleware' => 'IsAdmin'], function () {
-        Route::get('/dashboard', 'Tir\FirstPanel\Controllers\AdminController@dashboard')->name('dashboard');
+        Route::get('/', 'Tir\FirstPanel\Controllers\AdminController@dashboard')->name('dashboard');
     });
+
 });
+
+
