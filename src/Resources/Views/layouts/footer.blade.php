@@ -1,7 +1,162 @@
 
 <script src="/adminpanel/js/jquery-3.3.1.js"></script>
+
+<script>
+
+
+    //create actionable fields
+    class additionalField {
+
+        constructor(cloningElement) {
+
+            this.$cloningElement = cloningElement;
+            this.$item;
+            this.dateId;
+            this.templateHtml;
+            this.callback;
+
+            // add to jquery
+            this.$cloningElement = $(this.$cloningElement);
+            this.addPlusButton();
+            this.clone();
+            this.removeItem();
+            this.addRowButton();
+
+        }
+
+        clone(){
+            //find item into cloningElement
+            this.$item =  this.$cloningElement.find('.item');
+
+            //because we always have an item but index start from zero
+            this.dataId = this.$item.length - 1;
+
+            this.templateHtml = this.$item.html();
+
+
+            var self = this;
+            this.$item.each(function () {
+                self.findAndReplaceItem(this);
+            });
+
+
+        }
+
+
+
+
+        addRow(){
+            let newItem = $('<div class="item"></div>');
+            $(newItem).append(`<a class="remove-item btn"><i class="fas fa-times"></i></a> ${this.templateHtml} `);
+
+            let self = this;
+            $(newItem).find('[name]').each(function () {
+                let nameTemplate = $(this).attr('name-template');
+                $(this).removeAttr('name-template');
+                let newName = self.replaceAll(nameTemplate, 'xxx', self.dataId);
+                $(this).attr('name', newName);
+                $(this).val('');
+            });
+
+
+            $(newItem).find('[id]').each(function () {
+                let idTemplate = $(this).attr('id-template');
+                $(this).removeAttr('id-template');
+                let idName = self.replaceAll(idTemplate, 'xxx', self.dataId);
+                $(this).attr('id', idName);
+            });
+
+
+            $(this.$cloningElement).append(newItem);
+            self.callback();
+
+            this.dataId++;
+
+        }
+
+        findAndReplaceItem(item){
+            $(item).remove();
+            let newItem = $('<div class="item"></div>');
+
+
+            // add remove button
+            $(newItem).append(`<a class="remove-item btn"><i class="fas fa-times"></i></a> ${this.templateHtml} `);
+
+
+            let self = this;
+            //find xxx replace with name index
+            $(newItem).find('[name]').each(function () {
+
+                let nameTemplate = $(this).attr('name-template');
+                console.log(nameTemplate);
+                $(this).removeAttr('name-template');
+                let newName = self.replaceAll(nameTemplate, 'xxx', self.dataId);
+                $(this).attr('name', newName);
+            });
+
+            //find xxx replace with name index
+            $(newItem).find('[id]').each(function () {
+
+                var idTemplate = $(this).attr('id-template');
+                $(this).removeAttr('id-template');
+                let idName = self.replaceAll(idTemplate, 'xxx', self.dataId);
+                $(this).attr('id', idName);
+
+            });
+            $(this.$cloningElement).append(newItem);
+
+
+            self.dataId++;
+
+        }
+
+        addPlusButton(){
+            this.$cloningElement.after(`<a class="plus btn"><i class="fas fa-plus"></i></a>`);
+
+        }
+
+        replaceAll(str, find, replace) {
+            return str.replace(new RegExp(find, 'g'), replace);
+        }
+
+
+        removeItem(){
+            this.$cloningElement.on("click", 'a.remove-item', function (e) {
+                e.preventDefault();
+                $(this).parents('.item').remove();
+            });
+        }
+
+
+        addRowButton(){
+
+            let self = this;
+            $('body').on("click", 'a.plus', function () {
+                self.addRow();
+            });
+        }
+
+
+        callback(){
+            console.log('callback');
+            return this.callback;
+        }
+
+
+    }
+
+</script>
+
 @stack('firstScripts')
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+
+<script >
+$(function () {
+    $(".sortable").sortable();
+    $(".sortable").disableSelection();
+});
+</script>
+
 
 <script src="/adminpanel/js/flatpickr.min.js"></script>
 <script src="/adminpanel/js/jdate.min.js"></script>
@@ -54,6 +209,9 @@
 
 <script src="/adminpanel/libs/tinymce/tinymce.min.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+
 <script>
 
 
@@ -68,11 +226,25 @@
 //        size: 6
 //    });
 
+
+
+
+
+
+
+
+
     $('.select2').select2({
         dir: $('body').attr('dir'),
         language: $('html').attr('lang'),
-
     });
+
+
+    // $(".select2.taggable").select2({
+    //     tags: true,
+    //     dir: $('body').attr('dir'),
+    //     language: $('html').attr('lang'),
+    // });
 
 
     //create and config editor

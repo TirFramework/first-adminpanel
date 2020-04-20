@@ -1,6 +1,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <link href="/adminpanel/css/bootstrap.min.css" rel="stylesheet">
     @if( config('app.locale') == 'fa' )
     <link rel="stylesheet" href="/adminpanel/css/bootstrap.rtl.min.css" >
