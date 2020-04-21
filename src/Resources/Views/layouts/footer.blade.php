@@ -31,7 +31,6 @@
             //because we always have an item but index start from zero
             this.dataId = this.$item.length - 1;
 
-            this.templateHtml = this.$item.html();
 
 
             var self = this;
@@ -75,6 +74,9 @@
         }
 
         findAndReplaceItem(item){
+
+            this.templateHtml = $(item).html();
+
             $(item).remove();
             let newItem = $('<div class="item"></div>');
 
@@ -138,7 +140,6 @@
 
 
         callback(){
-            console.log('callback');
             return this.callback;
         }
 
@@ -333,7 +334,7 @@ $(function () {
                         style: 'multi',
                         style: 'os',
                     },
-                pageLength: 10,
+                pageLength: 25,
                 lengthMenu: [[10, 25, 50, 100, 500, -1], [10, 25, 50, 100, 500, "All"]],
                 order: order,
                 ajax: ""+'/admin/'+this.name+'/'+route,
