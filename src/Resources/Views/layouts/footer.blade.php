@@ -9,14 +9,14 @@
 
         constructor(cloningElement) {
 
-            this.$cloningElement = cloningElement;
+            this.cloningElement = cloningElement;
             this.$item;
             this.dateId;
             this.templateHtml;
             this.callback;
 
             // add to jquery
-            this.$cloningElement = $(this.$cloningElement);
+            this.$cloningElement = $(this.cloningElement);
             this.addPlusButton();
             this.clone();
             this.removeItem();
@@ -67,6 +67,8 @@
 
 
             $(this.$cloningElement).append(newItem);
+
+            console.log(this.$cloningElement);
             self.callback();
 
             this.dataId++;
@@ -133,7 +135,7 @@
         addRowButton(){
 
             let self = this;
-            $('body').on("click", 'a.plus', function () {
+            $('body').on("click", this.cloningElement + '+ a.plus', function () {
                 self.addRow();
             });
         }
@@ -218,7 +220,6 @@ $(function () {
 
 
     //File Manager
-    $('.image-btn').filemanager('image');   //btn image
     $('.file-btn').filemanager('file');   //btn file
 
     //select
