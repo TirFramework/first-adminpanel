@@ -16,7 +16,7 @@
 
 @if($errors->any())
 <div class="alert alert-danger" role="alert">
-    {{$error->first()}}
+    {{$errors->first()}}
 </div>
 @endif
 <form class="form-signin" action="{{ route('authentication') }}" method="post">
