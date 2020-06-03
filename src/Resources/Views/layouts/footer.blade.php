@@ -297,10 +297,11 @@ $(function () {
 
     //create data table
     class datatable {
-        constructor(table, column, name) {
+        constructor(table, column, name, routeName) {
             this.table = table;
             this.column = column;
             this.name = name;
+            this.routeName = routeName;
 
             //add two column to data column
             // this.column.unshift({data: null, defaultContent: '<i class=\"fas fa-arrows-alt\"></i>', orderable: false, searchable: false, className: 'reorder'});
@@ -338,7 +339,7 @@ $(function () {
                 pageLength: 25,
                 lengthMenu: [[10, 25, 50, 100, 500, -1], [10, 25, 50, 100, 500, "All"]],
                 order: order,
-                ajax: ""+'/admin/'+this.name+'/'+route,
+                ajax: route,
                 responsive: true,
 
                 columns: this.column,
