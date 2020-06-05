@@ -29,7 +29,7 @@
             this.$item =  this.$cloningElement.find('.item');
 
             //because we always have an item but index start from zero
-            this.dataId = this.$item.length - 1;
+            this.dataId = 0;
 
 
 
