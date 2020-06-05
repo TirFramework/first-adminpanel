@@ -3,150 +3,197 @@
 
 <script>
 
+class additionalField {
 
-    //create actionable fields
-    class additionalField {
+constructor(cloningElement) {
 
-        constructor(cloningElement) {
+    this.cloningElement = cloningElement;
+    this.$item;
+    this.dateId;
+    this.templateHtml;
+    this.callback;
 
-            this.cloningElement = cloningElement;
-            this.$item;
-            this.dateId;
-            this.templateHtml;
-            this.callback;
+    // add to jquery
+    this.$cloningElement = $(this.cloningElement);
+    this.addPlusButton();
+    this.clone();
+    this.removeItem();
+    this.addRowButton();
 
-            // add to jquery
-            this.$cloningElement = $(this.cloningElement);
-            this.addPlusButton();
-            this.clone();
-            this.removeItem();
-            this.addRowButton();
+}
 
-        }
+clone(){
+    //find item into cloningElement
+    this.$item =  this.$cloningElement.find('.item');
 
-        clone(){
-            //find item into cloningElement
-            this.$item =  this.$cloningElement.find('.item');
-
-            //because we always have an item but index start from zero
-            this.dataId = 0;
-
-
-
-            var self = this;
-            this.$item.each(function () {
-                self.findAndReplaceItem(this);
-            });
-
-
-        }
+    // //because we always have an item but index start from zero
+    // this.dataId = this.$item.length - 1;
+    
+    this.dataId = 0;
 
 
 
-
-        addRow(){
-            let newItem = $('<div class="item"></div>');
-            $(newItem).append(`<a class="remove-item btn"><i class="fas fa-times"></i></a> ${this.templateHtml} `);
-
-            let self = this;
-            $(newItem).find('[name]').each(function () {
-                let nameTemplate = $(this).attr('name-template');
-                $(this).removeAttr('name-template');
-                let newName = self.replaceAll(nameTemplate, 'xxx', self.dataId);
-                $(this).attr('name', newName);
-                $(this).val('');
-            });
+    var self = this;
+    this.$item.each(function () {
+        self.findAndReplaceItem(this);
+    });
 
 
-            $(newItem).find('[id]').each(function () {
-                let idTemplate = $(this).attr('id-template');
-                $(this).removeAttr('id-template');
-                let idName = self.replaceAll(idTemplate, 'xxx', self.dataId);
-                $(this).attr('id', idName);
-            });
+}
 
 
-            $(this.$cloningElement).append(newItem);
-
-            console.log(this.$cloningElement);
-            self.callback();
-
-            this.dataId++;
-
-        }
-
-        findAndReplaceItem(item){
-
-            this.templateHtml = $(item).html();
-
-            $(item).remove();
-            let newItem = $('<div class="item"></div>');
 
 
-            // add remove button
-            $(newItem).append(`<a class="remove-item btn"><i class="fas fa-times"></i></a> ${this.templateHtml} `);
+addRow(){
+    let newItem = $('<div class="item"></div>');
+    $(newItem).append(`<a class="remove-item btn"><i class="fas fa-times"></i></a> ${this.templateHtml} `);
+
+    let self = this;
+    $(newItem).find('[name]').each(function () {
+        let nameTemplate = $(this).attr('name-template');
+        $(this).removeAttr('name-template');
+        let newName = self.replaceAll(nameTemplate, 'xxx', self.dataId);
+        $(this).attr('name', newName);
+        $(this).val('');
+    });
 
 
-            let self = this;
-            //find xxx replace with name index
-            $(newItem).find('[name]').each(function () {
-
-                let nameTemplate = $(this).attr('name-template');
-                console.log(nameTemplate);
-                $(this).removeAttr('name-template');
-                let newName = self.replaceAll(nameTemplate, 'xxx', self.dataId);
-                $(this).attr('name', newName);
-            });
-
-            //find xxx replace with name index
-            $(newItem).find('[id]').each(function () {
-
-                var idTemplate = $(this).attr('id-template');
-                $(this).removeAttr('id-template');
-                let idName = self.replaceAll(idTemplate, 'xxx', self.dataId);
-                $(this).attr('id', idName);
-
-            });
-            $(this.$cloningElement).append(newItem);
+    $(newItem).find('[id]').each(function () {
+        let idTemplate = $(this).attr('id-template');
+        $(this).removeAttr('id-template');
+        let idName = self.replaceAll(idTemplate, 'xxx', self.dataId);
+        $(this).attr('id', idName);
+    });
 
 
-            self.dataId++;
 
-        }
+    //find xxx replace with name index
+    $(newItem).find('[data-input]').each(function () {
 
-        addPlusButton(){
-            this.$cloningElement.after(`<a class="plus btn"><i class="fas fa-plus"></i></a>`);
+        let dataInputTemplate = $(this).attr('data-input-template');
+        console.log(dataInputTemplate)
+        $(this).removeAttr('data-input-template');
+        let dataName = self.replaceAll(dataInputTemplate, 'xxx', self.dataId);
+        $(this).attr('data-input', dataName);
 
-        }
-
-        replaceAll(str, find, replace) {
-            return str.replace(new RegExp(find, 'g'), replace);
-        }
-
-
-        removeItem(){
-            this.$cloningElement.on("click", 'a.remove-item', function (e) {
-                e.preventDefault();
-                $(this).parents('.item').remove();
-            });
-        }
+    });
 
 
-        addRowButton(){
+        //find xxx replace with name index
+    $(newItem).find('[data-preview]').each(function () {
 
-            let self = this;
-            $('body').on("click", this.cloningElement + '+ a.plus', function () {
-                self.addRow();
-            });
-        }
+        let dataPreviewTemplate = $(this).attr('data-preview-template');
+        $(this).removeAttr('data-preview-template');
+        let datadataPreview = self.replaceAll(dataPreviewTemplate, 'xxx', self.dataId);
+        $(this).attr('data-preview', datadataPreview);
 
-
-        callback(){
-            return this.callback;
-        }
+    });
 
 
-    }
+    $(this.$cloningElement).append(newItem);
+
+    self.callback();
+
+    this.dataId++;
+
+}
+
+findAndReplaceItem(item){
+
+    this.templateHtml = $(item).html();
+
+    $(item).remove();
+    let newItem = $('<div class="item"></div>');
+
+
+    // add remove button
+    $(newItem).append(`<a class="remove-item btn"><i class="fas fa-times"></i></a> ${this.templateHtml} `);
+
+
+    let self = this;
+    //find xxx replace with name index
+    $(newItem).find('[name]').each(function () {
+
+        let nameTemplate = $(this).attr('name-template');
+        $(this).removeAttr('name-template');
+        let newName = self.replaceAll(nameTemplate, 'xxx', self.dataId);
+        $(this).attr('name', newName);
+    });
+
+    //find xxx replace with name index
+    $(newItem).find('[id]').each(function () {
+
+        let idTemplate = $(this).attr('id-template');
+        console.log("additionalField -> findAndReplaceItem -> this", this)
+        $(this).removeAttr('id-template');
+        let idName = self.replaceAll(idTemplate, 'xxx', self.dataId);
+        $(this).attr('id', idName);
+
+    });
+
+
+    //find xxx replace with name index
+    $(newItem).find('[data-input]').each(function () {
+
+        let dataInputTemplate = $(this).attr('data-input-template');
+        $(this).removeAttr('data-input-template');
+        let dataName = self.replaceAll(dataInputTemplate, 'xxx', self.dataId);
+        $(this).attr('data-input', dataName);
+
+    });
+
+
+    //find xxx replace with name index
+    $(newItem).find('[data-preview]').each(function () {
+
+        let dataPreviewTemplate = $(this).attr('data-preview-template');
+        $(this).removeAttr('data-preview-template');
+        let datadataPreview = self.replaceAll(dataPreviewTemplate, 'xxx', self.dataId);
+        $(this).attr('data-preview', datadataPreview);
+
+    });
+
+
+    $(this.$cloningElement).append(newItem);
+
+
+    self.dataId++;
+
+}
+
+addPlusButton(){
+    this.$cloningElement.after(`<a class="plus btn"><i class="fas fa-plus"></i></a>`);
+
+}
+
+replaceAll(str, find, replace) {
+    return str.replace(new RegExp(find, 'g'), replace);
+}
+
+
+removeItem(){
+    this.$cloningElement.on("click", 'a.remove-item', function (e) {
+        e.preventDefault();
+        $(this).parents('.item').remove();
+    });
+}
+
+
+addRowButton(){
+
+    let self = this;
+    $('body').on("click", this.cloningElement + '+ a.plus', function () {
+        self.addRow();
+    });
+}
+
+
+callback(){
+    return this.callback;
+}
+
+
+}
 
 </script>
 
