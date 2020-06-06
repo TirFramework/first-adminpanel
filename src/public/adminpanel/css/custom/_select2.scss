@@ -44,3 +44,7 @@
 //       direction: rtl;
 //   }
 
+.select2-container--default .select2-search--inline .select2-search__field{
+    min-width: 100px;
+    min-width: fit-content;
+}
