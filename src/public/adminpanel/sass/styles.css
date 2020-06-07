@@ -71,7 +71,8 @@ h3, h4 {
 
 input.form-control {
   border: 1px solid #ddd;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   height: 46px;
 }
 
@@ -86,7 +87,8 @@ input.form-control {
 .form-control:focus {
   border: 1px solid #30a5ff;
   outline: 0;
-  box-shadow: inset 0px 0px 0px 1px #30a5ff;
+  -webkit-box-shadow: inset 0px 0px 0px 1px #30a5ff;
+          box-shadow: inset 0px 0px 0px 1px #30a5ff;
 }
 
 .has-success .form-control, .has-success .form-control:focus {
@@ -239,7 +241,8 @@ a.btn:hover, button:hover {
 }
 
 a.btn:active, button:active {
-  box-shadow: inset 0px 0px 500px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset 0px 0px 500px rgba(0, 0, 0, 0.1);
+          box-shadow: inset 0px 0px 500px rgba(0, 0, 0, 0.1);
   opacity: 1;
 }
 
@@ -519,7 +522,8 @@ a.label:hover, a.label:focus {
 .panel-widget {
   padding: 10px 0;
   position: relative;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   border-radius: 0;
   background: none;
   text-align: center;
@@ -732,7 +736,8 @@ a.label:hover, a.label:focus {
   border-radius: 2px;
   padding: 10px 20px;
   position: relative;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .timeline > li > .timeline-panel:before {
@@ -801,6 +806,7 @@ a.label:hover, a.label:focus {
   overflow: hidden;
   background-color: #f2f3f2;
   border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
@@ -813,7 +819,9 @@ a.label:hover, a.label:focus {
   color: #fff;
   text-align: center;
   background-color: #30a5ff;
-  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  -webkit-transition: width .6s ease;
   transition: width .6s ease;
 }
 
@@ -908,7 +916,8 @@ a.label:hover, a.label:focus {
   background: #555;
   border: 1px solid #30a5ff;
   outline: 0;
-  box-shadow: inset 0px 0px 0px 1px #30a5ff;
+  -webkit-box-shadow: inset 0px 0px 0px 1px #30a5ff;
+          box-shadow: inset 0px 0px 0px 1px #30a5ff;
 }
 
 .user-menu {
@@ -932,7 +941,8 @@ a.label:hover, a.label:focus {
   display: block;
   padding: 0;
   display: none;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   background: #fff;
 }
 
