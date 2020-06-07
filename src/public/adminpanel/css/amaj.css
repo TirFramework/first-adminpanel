@@ -1036,6 +1036,13 @@ input.form-control {
   margin-top: 4px;
 }
 
+.select2-container--default .select2-search--inline .select2-search__field {
+  min-width: 100px;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+}
+
 .tab-content h4 {
   height: 30px;
   margin-top: -75px;

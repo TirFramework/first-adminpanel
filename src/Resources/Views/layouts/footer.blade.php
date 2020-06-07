@@ -10,6 +10,7 @@ constructor(cloningElement) {
     this.cloningElement = cloningElement;
     this.$item;
     this.dateId;
+    this.clonedateId;
     this.templateHtml;
     this.callback;
 
@@ -27,9 +28,9 @@ clone(){
     this.$item =  this.$cloningElement.find('.item');
 
     // //because we always have an item but index start from zero
-    // this.dataId = this.$item.length - 1;
+    this.dataId = this.$item.length;
     
-    this.dataId = 0;
+    this.clonedateId = 0;
 
 
 
@@ -71,7 +72,6 @@ addRow(){
     $(newItem).find('[data-input]').each(function () {
 
         let dataInputTemplate = $(this).attr('data-input-template');
-        console.log(dataInputTemplate)
         $(this).removeAttr('data-input-template');
         let dataName = self.replaceAll(dataInputTemplate, 'xxx', self.dataId);
         $(this).attr('data-input', dataName);
@@ -92,7 +92,9 @@ addRow(){
 
     $(this.$cloningElement).append(newItem);
 
+    console.log(this.dataId);
     self.callback();
+
 
     this.dataId++;
 
@@ -109,61 +111,52 @@ findAndReplaceItem(item){
     // add remove button
     $(newItem).append(`<a class="remove-item btn"><i class="fas fa-times"></i></a> ${this.templateHtml} `);
 
-
     let self = this;
     //find xxx replace with name index
     $(newItem).find('[name]').each(function () {
-
         let nameTemplate = $(this).attr('name-template');
         $(this).removeAttr('name-template');
-        let newName = self.replaceAll(nameTemplate, 'xxx', self.dataId);
+        let newName = self.replaceAll(nameTemplate, 'xxx', self.clonedateId);
         $(this).attr('name', newName);
     });
 
     //find xxx replace with name index
     $(newItem).find('[id]').each(function () {
-
         let idTemplate = $(this).attr('id-template');
         console.log("additionalField -> findAndReplaceItem -> this", this)
         $(this).removeAttr('id-template');
-        let idName = self.replaceAll(idTemplate, 'xxx', self.dataId);
+        let idName = self.replaceAll(idTemplate, 'xxx', self.clonedateId);
         $(this).attr('id', idName);
-
     });
 
 
     //find xxx replace with name index
     $(newItem).find('[data-input]').each(function () {
-
         let dataInputTemplate = $(this).attr('data-input-template');
         $(this).removeAttr('data-input-template');
-        let dataName = self.replaceAll(dataInputTemplate, 'xxx', self.dataId);
+        let dataName = self.replaceAll(dataInputTemplate, 'xxx', self.clonedateId);
         $(this).attr('data-input', dataName);
-
     });
 
 
     //find xxx replace with name index
     $(newItem).find('[data-preview]').each(function () {
-
         let dataPreviewTemplate = $(this).attr('data-preview-template');
         $(this).removeAttr('data-preview-template');
-        let datadataPreview = self.replaceAll(dataPreviewTemplate, 'xxx', self.dataId);
+        let datadataPreview = self.replaceAll(dataPreviewTemplate, 'xxx', self.clonedateId);
         $(this).attr('data-preview', datadataPreview);
-
     });
 
 
     $(this.$cloningElement).append(newItem);
 
 
-    self.dataId++;
+    self.clonedateId++;
 
 }
 
 addPlusButton(){
     this.$cloningElement.after(`<a class="plus btn"><i class="fas fa-plus"></i></a>`);
-
 }
 
 replaceAll(str, find, replace) {
