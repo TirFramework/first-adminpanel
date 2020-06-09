@@ -3,8 +3,8 @@
 namespace Tir\FirstPanel;
 
 
-use AdminMenu;
 use Illuminate\Support\ServiceProvider;
+use Tir\FirstPanel\Services\AdminMenu;
 
 class FirstPanelServiceProvider extends ServiceProvider
 {
@@ -37,14 +37,15 @@ class FirstPanelServiceProvider extends ServiceProvider
             __DIR__ . '/public/adminpanel' => public_path('adminpanel'),
         ], 'first-panel');
 
+        $this->adminMenu();
 
     }
 
 
     private function adminMenu()
     {
-        $this->app->singleton(AdminMenu::class, function ($app) {
-            return new AdminMenu();
+        $this->app->singleton('AdminMenu', function ($app) {
+            return new AdminMenu;
         });
     }
 }
