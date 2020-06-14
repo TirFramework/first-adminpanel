@@ -38,7 +38,17 @@
         @if(isset($section['sub']))
             <ul>
                 @foreach($section['sub'] as $menu)
-                    <li class="dropdown">
+                    <li class="
+                    @if(isset($menu['sub']))
+                        dropdown
+                        @foreach($menu['sub'] as $subMenu)
+                        {{(request()->is( $subMenu['link'] )) ? 'open' : '' }}
+                        @endforeach
+                    @else
+                        {{(request()->is( 'admin/productSelector/wizard*' )) ? 'active' : '' }}
+                    @endif
+
+                    ">
                         <a href="@if(isset($menu['sub'])) # @else {{$menu['link'] ?? null}} @endif " @if(isset($menu['sub'])) class="dropdown-toggle"  @endif>
                             <span class="icon">
                                 <svg class="svg-inline--fa fa-box fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="box" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M509.5 184.6L458.9 32.8C452.4 13.2 434.1 0 413.4 0H272v192h238.7c-.4-2.5-.4-5-1.2-7.4zM240 0H98.6c-20.7 0-39 13.2-45.5 32.8L2.5 184.6c-.8 2.4-.8 4.9-1.2 7.4H240V0zM0 224v240c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V224H0z"></path></svg><!-- <i class="fas fa-box"></i> --> </span>
@@ -47,11 +57,13 @@
                     @if(isset($menu['sub']))
                             <ul>
                                 @foreach($menu['sub'] as $subMenu)
-                                    <li>
-                                        <a href="http://tir.loc/admin/attribute ">
+                                    <li class="
+                                        {{(request()->is( $subMenu['link'] )) ? 'active' : '' }}
+                                    ">
+                                        <a href="{{ $subMenu['link'] }}">
                                             <span class="icon">
                                                 <svg class="svg-inline--fa fa-check-circle fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg><!-- <i class="fas fa-check-circle"></i> -->
-                                </span>
+                                            </span>
                                             <span class="text">{{$subMenu['title']}}</span>
                                         </a>
                                     </li>
@@ -158,14 +170,14 @@
 
 
 
-        
+
         <hr>
 
         <h6 class="p-2">
             @lang('first-panel::panel.users')
         </h6>
         <ul>
-            
+
 
             <li class="dropdown
                 {{ (request()->is('admin/user*')) ? 'open' : '' }}
