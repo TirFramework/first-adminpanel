@@ -14,6 +14,7 @@ class AdminMenu
 
     public function title(string $name)
     {
+        $this->clear();
         $this->item['title'] = trans($name);
         return $this;
     }
@@ -24,9 +25,10 @@ class AdminMenu
         return $this;
     }
 
+
     public function route($route)
     {
-        $this->item['link'] = route($route);
+        $this->item['link'] = str_replace(config('app.url').'/','',route($route));
         return $this;
     }
     public function weight($weight)
@@ -50,7 +52,18 @@ class AdminMenu
     public function add()
     {
         $this->slug = str_replace('.','.sub.',$this->slug);
-        Arr::set($this->nav, $this->slug, $this->item);
+
+        if(!Arr::has($this->nav, $this->slug))
+        {
+            Arr::set($this->nav, $this->slug, $this->item);
+        }
+        return $this;
+
+    }
+
+    private function clear()
+    {
+        $this->item = [];
     }
 
 
