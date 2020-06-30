@@ -1007,7 +1007,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .select2-selection {
-  height: 35px;
+  min-height: 35px;
 }
 
 .select2-container--default .select2-selection--multiple {
