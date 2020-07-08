@@ -510,12 +510,12 @@ $(function () {
                 idSrc: 'id',
                 fields: [{
                     label: "Order:",
-                    name: "sort_order"
+                    name: "position"
                 }]
             });
 
             // Activate an inline edit on click of a table cell
-            $(this.table).on('click', 'tbody .sort_order', function (e) {
+            $(this.table).on('click', 'tbody .position', function (e) {
                 editor.inline(this);
             });
             //for inline edit order Update
