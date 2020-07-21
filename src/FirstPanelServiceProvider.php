@@ -16,7 +16,7 @@ class FirstPanelServiceProvider extends ServiceProvider
 
     public function register()
     {
-
+        $this->adminMenu();
     }
 
     /**
@@ -37,7 +37,6 @@ class FirstPanelServiceProvider extends ServiceProvider
             __DIR__ . '/public/adminpanel' => public_path('adminpanel'),
         ], 'first-panel');
 
-        $this->adminMenu();
 
     }
 
