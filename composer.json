@@ -9,6 +9,7 @@
         }
     ],
     "require": {
+        "tir/crud": "*"
     },
 
     "autoload": {

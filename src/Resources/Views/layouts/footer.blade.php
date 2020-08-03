@@ -260,7 +260,7 @@ $(function () {
 
 
     //File Manager
-    $('.file-btn').filemanager('file');   //btn file
+    // $('.file-btn').filemanager('file');   //btn file
 
     //select
 //    $('.select').selectpicker({

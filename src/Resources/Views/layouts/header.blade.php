@@ -12,7 +12,7 @@
                     <div class="profile-userpic mx-2">
                         {{-- <img src="http://placehold.it/30/30a5ff/fff" width="30" class="img-responsive rounded-circle" alt=""> --}}
                         <span class="profile-avatar">
-                            {{ substr(Sentinel::getUser()->name ,0, 1) }}
+                            {{ substr(Auth::user()->name ,0, 1) }}
                         </span>
 
                     </div>
