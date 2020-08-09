@@ -3,7 +3,6 @@
 namespace Tir\FirstPanel\Services;
 
 use Illuminate\Support\Arr;
-use Illuminate\Http\Request;
 
 class AdminMenu
 {
