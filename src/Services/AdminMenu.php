@@ -3,6 +3,7 @@
 namespace Tir\FirstPanel\Services;
 
 use Illuminate\Support\Arr;
+use Illuminate\Http\Request;
 
 class AdminMenu
 {
@@ -28,7 +29,7 @@ class AdminMenu
 
     public function route($route)
     {
-        $this->item['link'] = str_replace(config('app.url').'/','',route($route));
+        $this->item['link'] = str_replace(request()->root().'/','',route($route));
         return $this;
     }
     public function weight($weight)
