@@ -216,13 +216,13 @@ $(function () {
 <script src="/adminpanel/js/l10n/fa.js"></script>
 
 
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="/adminpanel/libs/popper/popper.min.js"></script>
 <script src="/adminpanel/js/bootstrap.min.js"></script>
 
 
 <!-- DataTables -->
 <script type="text/javascript" src="/adminpanel/libs/DataTables/datatables.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+<script type="text/javascript" src="/adminpanel/libs/DataTables/bootstrap4/dataTables.bootstrap4.min.js"></script>
 <script type="text/javascript" src="/adminpanel/libs/DataTables/Select-1.2.5/js/dataTables.select.min.js"></script>
 <script type="text/javascript" src="/adminpanel/libs/DataTables/Buttons-1.5.1/js/dataTables.buttons.min.js"></script>
 <script type="text/javascript" src="/adminpanel/libs/DataTables/Editor-1.7.3/js/dataTables.editor.min.js"></script>
@@ -252,7 +252,7 @@ $(function () {
 
 <script src="/adminpanel/libs/tinymce/tinymce.min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="/adminpanel/libs/sweetalert2/sweetalert.js"></script>
 
 
 <script>
