@@ -5,7 +5,7 @@
 <div id="sidebar-collapse" class="sidebar">
 
     <div class="header-sidebar">
-        <a class="navbar-brand" target="_blank"><span>
+        <a href="/" class="navbar-brand" target="_blank"><span>
         {{config('app.name')}}</span>
             <!-- @lang('first-panel::panel.admin_panel') -->
         </a>
@@ -59,7 +59,8 @@
                             <ul>
                                 @foreach($menu['sub'] as $subMenu)
                                     <li class="
-                                        {{(request()->is( $subMenu['link'].'*' )) ? 'active' : '' }}
+                                        {{(request()->is( $subMenu['link'] )) ? 'active' : '' }}
+                                        {{(request()->is( $subMenu['link'].'/'.'*' )) ? 'active' : '' }}
                                     ">
                                         <a href="{{ '/'.$subMenu['link'] }}">
                                             <span class="icon">
