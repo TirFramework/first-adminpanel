@@ -8,13 +8,16 @@
                 </form>
             </nav>
             <nav class="d-flex">
-                <div class="profile-sidebar d-flex">
+                <div class="profile-sidebar d-flex align-items-center ">
+                    <div class="logout mx-2">
+                        <a href="/logout">خروج</a>
+                    </div>
+
                     <div class="profile-userpic mx-2">
                         {{-- <img src="http://placehold.it/30/30a5ff/fff" width="30" class="img-responsive rounded-circle" alt=""> --}}
                         <span class="profile-avatar">
                             {{ substr(Auth::user()->name ,0, 1) }}
                         </span>
-
                     </div>
                     {{-- <div class="profile-usertitle">
                         <div class="profile-usertitle-name">
@@ -25,9 +28,9 @@
                         <div class="profile-usertitle-status"><span class="indicator label-success"></span>@lang('panel.online')
                         </div>
                     </div> --}}
-                    <div class="clear"></div>
+{{--                    <div class="clear"></div>--}}
                 </div>
-                <ul class="nav navbar-top-links align-items-center">
+{{--                <ul class="nav navbar-top-links align-items-center">--}}
                     {{-- <li class="dropdown mx-2">
                         <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
                             <em class="fas fa-bolt"></em>
@@ -78,7 +81,7 @@
                     </li> --}}
 
 
-                </ul>
+{{--                </ul>--}}
             </nav>
             <nav class="d-flex">
                 <span>{{app()->getLocale()}}</span>

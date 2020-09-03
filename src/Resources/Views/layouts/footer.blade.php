@@ -305,9 +305,9 @@ $(function () {
                 "advlist autolink lists link image charmap print preview hr anchor pagebreak",
                 "searchreplace wordcount visualblocks visualchars code fullscreen",
                 "insertdatetime media nonbreaking save table contextmenu directionality",
-                "emoticons template paste textcolor colorpicker textpattern"
+                "emoticons template paste textcolor colorpicker textpattern textcolor"
             ],
-            toolbar: "ltr rtl insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media",
+            toolbar: "ltr rtl insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media forecolor backcolor",
             directionality :"rtl",
             relative_urls: false,
             file_browser_callback : function(field_name, url, type, win) {
