@@ -294,6 +294,8 @@ $(function () {
         var editor_config = {
             path_absolute : "/",
             selector: ".textarea",
+            height : "300",
+
             // valid_elements: "@[class],*[style],h1,h2,h3,h4,h5,h6,a[href|target],strong/b,"
             // + "div[*],br,table,tbody,thead,tr,td,th,ul,ol,li,img[src],i[*],small[*],span[*],article,section,nav,style",
             valid_elements: '*[*]',
