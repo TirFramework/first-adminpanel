@@ -16,7 +16,6 @@ class FirstPanelServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->adminMenu();
     }
 
     /**
@@ -40,11 +39,4 @@ class FirstPanelServiceProvider extends ServiceProvider
 
     }
 
-
-    private function adminMenu()
-    {
-        $this->app->singleton('AdminMenu', function ($app) {
-            return new AdminMenu;
-        });
-    }
 }

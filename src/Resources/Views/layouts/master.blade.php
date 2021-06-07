@@ -4,11 +4,7 @@
 @include(config('crud.admin-panel').'::layouts.head')
 
 <body class="@if( config('app.locale') == 'fa' ) rtl @endif"
-
 @if( config('app.locale') == 'fa' ) dir="rtl" @else dir="ltr" @endif">
-
-
-
 
     @include(config('crud.admin-panel').'::layouts.header')
     @include(config('crud.admin-panel').'::layouts.sidebar')

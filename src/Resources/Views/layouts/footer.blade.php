@@ -29,7 +29,7 @@ clone(){
 
     // //because we always have an item but index start from zero
     this.dataId = this.$item.length;
-    
+
     this.clonedateId = 0;
 
 
@@ -189,7 +189,7 @@ callback(){
 }
 
 </script>
-    
+
 @stack('firstScripts')
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 
@@ -209,10 +209,8 @@ $(function () {
 <script src="/adminpanel/libs/jquery-validate/localization/messages_fa.js"></script>
 
 
-<script>
-    window._Date = window.Date
-    // console.log(window.Date);
-</script>
+<script> window._Date = window.Date</script>
+
 <script src="/adminpanel/js/l10n/fa.js"></script>
 
 
@@ -226,14 +224,6 @@ $(function () {
 <script type="text/javascript" src="/adminpanel/libs/DataTables/Select-1.2.5/js/dataTables.select.min.js"></script>
 <script type="text/javascript" src="/adminpanel/libs/DataTables/Buttons-1.5.1/js/dataTables.buttons.min.js"></script>
 <script type="text/javascript" src="/adminpanel/libs/DataTables/Editor-1.7.3/js/dataTables.editor.min.js"></script>
-
-
-
-
-<!-- Bootstrap Select  -->
-<!-- <script type="text/javascript" src="/adminpanel/libs/bootstrapSelect/dist/js/bootstrap-select.js"></script> -->
-
-
 
 <!-- Select2 -->
 <script src="/adminpanel/libs/select2/js/select2.min.js"></script>
@@ -257,37 +247,10 @@ $(function () {
 
 <script>
 
-
-
-    //File Manager
-    // $('.file-btn').filemanager('file');   //btn file
-
-    //select
-//    $('.select').selectpicker({
-//        style: ' input-md',
-//        size: 6
-//    });
-
-
-
-
-
-
-
-
-
     $('.select2').select2({
         dir: $('body').attr('dir'),
         language: $('html').attr('lang'),
     });
-
-
-    // $(".select2.taggable").select2({
-    //     tags: true,
-    //     dir: $('body').attr('dir'),
-    //     language: $('html').attr('lang'),
-    // });
-
 
     //create and config editor
     function editor (){
@@ -343,7 +306,6 @@ $(function () {
             this.column = column;
             this.name = name;
             this.routeName = routeName;
-
             //add two column to data column
             // this.column.unshift({data: null, defaultContent: '<i class=\"fas fa-arrows-alt\"></i>', orderable: false, searchable: false, className: 'reorder'});
             this.column.push({data: 'action', name: 'action', orderable: false, searchable: false});
@@ -404,12 +366,12 @@ $(function () {
                         {
                             //var select = $('<select class="select2" data-live-search="true"><option value="...">{{trans('panel.all')}}</option></select>')
                             //TODO:refactor paginate selet2
-                            var select = $('<select class="select2 filter" data-live-search="true"><option value="">{{trans('crud::panel.all')}}</option></select>')
+                            var select = $('<select class="select2 filter" data-live-search="true"><option value="">{{trans('core::panel.all')}}</option></select>')
                                 .appendTo($(column.footer()).empty())
                                 .on('change', function () {
                                     var val = $(this).val();
-                                    if(val != ""){
-                                        val = '^'+ val +'$';
+                                    if (val != "") {
+                                        val = '^' + val + '$';
                                     }
                                     column.search(val, true, false)
                                         .draw(true);
@@ -535,6 +497,21 @@ $(function () {
         }
     }
 
+    $(document).ready(function () {
+        // let tableData =  $('#service-container').attr('data-service');
+
+        const tableData = JSON.parse(document.getElementById('service-container').textContent);
+
+
+        const moduleName = tableData.moduleName;
+        const col = tableData.col;
+        const dataRoute = tableData.dataRoute;
+        const filters = tableData.filters;
+
+        const table = new datatable('#table', col, moduleName);
+        table.create([0, "desc"], filters, dataRoute, [true]);
+    });
+
 
     //delete row
     function deleteRow(route) {
@@ -637,7 +614,6 @@ for (var i = 0, len = links.length; i < len; i++) {
         $(input).hide();
     }
 
-
     if( $(".PRICE, .price").length ){
 
         $(".PRICE, .price").each(function() {
@@ -645,10 +621,8 @@ for (var i = 0, len = links.length; i < len; i++) {
             PRICE = PRICE.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
             $(this).html(PRICE);
         });
-        
+
     }
-
-
 
     function cloneprice(input){
         var oldinput = $(input).parent('.price-group').find("input.price");

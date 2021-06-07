@@ -8,41 +8,21 @@ return [
     |--------------------------------------------------------------------------
     */
 
-    'dashboard'     => 'dashboard',
-    'attribute'     => 'attribute',
-    'attributes'    => 'attributes',
-    'categories' => 'categories',
-    'attributeSet'  => 'attributeSet',
-    'attributeSets' => 'attributeSets',
-    'product'       => 'product',
-    'products'      => 'products',
-    'option'        => 'option',
-    'options'       => 'options',
-    'user'          => 'user',
-    'users' => 'users',
+    'dashboard' => 'Dashboard',
+    'new'       => 'New',
 
-    'attribute' => 'attribute',
-    'attributes' => 'attributes',
-    'attributeSet' => 'attributeSet',
-    'attributeSets' => 'attributeSets',
-    'product' => 'product',
-    'products' => 'products',
-    'option' => 'option',
-    'options' => 'options',
+    'option'  => 'Option',
+    'options' => 'Options',
 
 
     'action' => 'action',
 
+    'general' => 'General',
 
-    'shop' => 'shop',
-    'general' => 'general',
-
-    
     'Copyright' => 'Copyright',
-    
-    'search' => 'search',
+    'search'    => 'Search',
 
-    'admin_panel' => 'admin_panel',
+    'admin_panel' => 'Admin_panel',
 
 
 ];
